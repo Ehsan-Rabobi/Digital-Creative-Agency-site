@@ -1,10 +1,12 @@
 import { Box, ListItem, MenuList, Stack, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import videoHead from "../assets/video/video_2024-11-15_16-51-47.mp4";
 import { KeyboardArrowDown } from "@mui/icons-material";
 
 export default function Header() {
+  const [changeNav, setChangeNav] = useState(false);
+  console.log(changeNav);
   const menuItem = [
     "HOME",
     "ABOUT",
@@ -22,10 +24,10 @@ export default function Header() {
           cursor: "pointer",
           fontWeight: "bold",
           fontFamily: "sans-serif",
-          color: "white",
+          color: `${!changeNav ? 'white' : 'black'}`,
           fontSize: "14px",
           "&:hover": {
-            color: "yellow",
+            color: "#ffa600",
           },
         }}
       >
@@ -38,14 +40,31 @@ export default function Header() {
     window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
   };
 
-  const handleChangeNav = ()=>{
-    const headerHeight = document.querySelector('nav').offsetHeight-125;  
-  }
+  const handleChangeNav = () => {
+    const headerHeight = document.querySelector("nav")?.offsetHeight - 70;
+    if (window.scrollY > headerHeight) {
+      setChangeNav(true);
+    } else if(window.scrollY === 0) {
+      setChangeNav(false);
+    }
+  };
+  useEffect(() => {
+
+    const handleScroll = () => {
+      handleChangeNav();
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <>
       <Stack>
         <nav
-          style={{
+          style={ !changeNav ?{
             position: "fixed",
             display: "flex",
             alignItems: "center",
@@ -54,15 +73,29 @@ export default function Header() {
             height: "125px",
             zIndex: "1111",
             padding: "60px",
+            backgroundColor: "transparent",
+            transition: "all 0.8s ease",
+          } : {
+            position: "fixed",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            width: "100%",
+            height:'80px',
+            zIndex: "1111",
+            padding: "0px 60px",
+            backgroundColor:"white",
+            transition: "all 0.8s ease",
+            boxShadow:"0px 0px 18px 7px rgba(0,0,0,0.3)"
           }}
         >
           <Box>
             <Typography
               variant="h4"
-              sx={{ color: "white", fontWeight: "bold", padding: "20px" }}
+              sx={{ color: `${changeNav ? '#bebebe' : 'white'}`, fontWeight: "bold", padding: "20px" }}
             >
-              <span style={{ color: "yellow" }}>S</span>O
-              <span style={{ color: "yellow" }}>L</span>O
+              <span style={ {color:"#ffa600"}}>S</span>O
+              <span style={ {color:"#ffa600"}}>L</span>O
             </Typography>
           </Box>
           <Box display={"flex"}>
@@ -117,7 +150,7 @@ export default function Header() {
                 fontWeight={"bold"}
                 color="white"
               >
-                CREATIVE <span style={{ color: "yellow" }}>AGENCY</span>
+                CREATIVE <span style={{ color: "#ffa600" }}>AGENCY</span>
               </Typography>
               <Typography textAlign={"center"} color="white" fontWeight={300}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam in
@@ -138,7 +171,7 @@ export default function Header() {
                 color: "white",
                 cursor: "pointer",
                 "&:hover": {
-                  color: "yellow",
+                  color: "#ffa600",
                 },
                 "&:active": {
                   transform: "scale(0.9)",
