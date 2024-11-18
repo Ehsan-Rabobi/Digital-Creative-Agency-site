@@ -41,7 +41,7 @@ export default function Header() {
   };
 
   const handleChangeNav = () => {
-    const headerHeight = document.querySelector("nav")?.offsetHeight - 70;
+    const headerHeight = document.querySelector("nav")?.offsetHeight - 50;
     if (window.scrollY > headerHeight) {
       setChangeNav(true);
     } else if(window.scrollY === 0) {
@@ -92,7 +92,7 @@ export default function Header() {
           <Box>
             <Typography
               variant="h4"
-              sx={{ color: `${changeNav ? '#bebebe' : 'white'}`, fontWeight: "bold", padding: "20px" }}
+              sx={{ color: `${changeNav ? '#bebebe' : 'white'}`,cursor:"pointer" , fontWeight: "bold", padding: "20px" }}
             >
               <span style={ {color:"#ffa600"}}>S</span>O
               <span style={ {color:"#ffa600"}}>L</span>O
