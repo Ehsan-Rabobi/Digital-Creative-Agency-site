@@ -6,7 +6,6 @@ import { KeyboardArrowDown } from "@mui/icons-material";
 
 export default function Header() {
   const [changeNav, setChangeNav] = useState(false);
-  console.log(changeNav);
   const menuItem = [
     "HOME",
     "ABOUT",

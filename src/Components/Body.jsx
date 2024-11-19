@@ -4,39 +4,85 @@ import { Box, Typography } from "@mui/material";
 import aboutPic from "../assets/img/about/about.png";
 
 export default function Body() {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = createRef();
+  // const [isVisible, setIsVisible] = useState(false);
+  // const ref = createRef();
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (ref.current) {
+  //       const rect = ref.current.getBoundingClientRect();
+  //       const top = rect.top;
+  //       const height = rect.height;
+  //       const viewportHeight = window.innerHeight;
+
+  //       if (top + height >= 0 && top - viewportHeight <= 0) {
+  //         setIsVisible(true);
+  //       } else {
+  //         setIsVisible(false);
+  //       }
+  //     }
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
+
+  const [isVisible1, setIsVisible1] = useState(false);
+  const [isVisible2, setIsVisible2] = useState(false);
+  const [isVisible3, setIsVisible3] = useState(false);
+  const [isVisible4, setIsVisible4] = useState(false);
+
+  // Create separate refs for each element
+  const ref1 = createRef();
+  const ref2 = createRef();
+  const ref3 = createRef();
+  const ref4 = createRef();
+  const ref5 = createRef();  // For the last section
 
   useEffect(() => {
     const handleScroll = () => {
-      if (ref.current) {
-        const rect = ref.current.getBoundingClientRect();
-        const top = rect.top;
-        const height = rect.height;
-        const viewportHeight = window.innerHeight;
+      const checkVisibility = (ref) => {
+        if (ref.current) {
+          const rect = ref.current.getBoundingClientRect();
+          const top = rect.top;
+          const height = rect.height;
+          const viewportHeight = window.innerHeight;
 
-        if (top + height >= 0 && top - viewportHeight <= 0) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
+          if (top + height >= 0 && top - viewportHeight <= 0) {
+            return true;
+          } else {
+            return false;
+          }
         }
-      }
+        return false;
+      };
+
+      // Update visibility for each element
+      setIsVisible1(checkVisibility(ref1));
+      setIsVisible2(checkVisibility(ref2));
+      setIsVisible3(checkVisibility(ref3));
+      setIsVisible4(checkVisibility(ref4));
+      // setIsVisible5(checkVisibility(ref5)); // Add for the last section
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
+  
+
   return (
     <>
       <section className="note mt-[120px] flex items-center justify-between">
         <motion.div
-          ref={ref}
+          ref={ref1}
           initial={{ x: -250 }}
-          animate={isVisible ? { x: 60, opacity: 1 } : { x: -250, opacity: 0 }}
+          animate={isVisible1 ? { x: 60, opacity: 1 } : { x: -250, opacity: 0 }}
           transition={{ duration: 1 }}
           className="flex w-[30%] pl-[30px] gap-2 items-center min-h-[150px]"
         >
@@ -55,9 +101,9 @@ export default function Body() {
 
         <motion.div
           className="flex flex-col gap-4"
-          ref={ref}
+          ref={ref2}
           initial={{ x: -250 }}
-          animate={isVisible ? { x: -50, opacity: 1 } : { x: 350, opacity: 0 }}
+          animate={isVisible2 ? { x: -50, opacity: 1 } : { x: 350, opacity: 0 }}
           transition={{ duration: 1 }}
         >
           <p className="w-[600px] text-[14px] text-neutral-700">
@@ -76,10 +122,10 @@ export default function Body() {
       </section>
       <section className="w-[100%] h-[500px] mt-[80px] flex items-center justify-center">
         <motion.img
-          ref={ref}
-          initial={{ opacity: 0 }}
-          animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 5 }}
+          ref={ref3}
+          initial={{ y: 200 , opacity:0 }}
+          animate={isVisible3 ? { y: 0 , opacity:1 } : { y: 200 , opacity:0 }}
+          transition={{ duration: 1 }}
           src={aboutPic}
         />
       </section>
@@ -88,10 +134,10 @@ export default function Body() {
           className="w-[350px] h-[400px] shadow-[10px_10px_20px_rgba(8,0,0,0.2)]
          bg-white flex flex-col gap-4 items-center justify-center p-[20px] transition-all
           duration-1000 hover:bg-[#ffa600] group rounded-sm"
-          ref={ref}
-          initial={{ x: -250 }}
-          animate={isVisible ? { x: -50, opacity: 1 } : { x: 350, opacity: 0 }}
-          transition={{ duration: 1 }}
+          ref={ref4}
+          initial={{ x: -450 }}
+          animate={isVisible4 ? { x: 15, opacity: 1 } : { x: -450, opacity: 0 }}
+          transition={{ duration: 0.8 }}
         >
           <span>
             <svg
@@ -128,10 +174,15 @@ export default function Body() {
             Distinctio, eos asperiores nobis molestias nam. Ex quos dicta as.
           </p>
         </motion.div>
-        <div
+        <motion.div
           className="w-[350px] h-[400px] shadow-[10px_10px_20px_rgba(8,0,0,0.2)]
          bg-white flex flex-col gap-4 items-center justify-center p-[20px] transition-all
           duration-1000 hover:bg-[#ffa600] group rounded-sm"
+          ref={ref4}
+          initial={{ y: 350 , opacity:0 , visibility:'hidden' }}
+          animate={isVisible4 ? { y: 0 , opacity:1 , visibility:'visible' } : { y: 350 , opacity:0 , visibility:'hidden' }}
+          transition={{ duration: 0.8 }}
+  
         >
           <span>
             <svg
@@ -166,11 +217,15 @@ export default function Body() {
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Distinctio, eos asperiores nobis molestias nam. Ex quos dicta as.
           </p>
-        </div>
-        <div
+        </motion.div>
+        <motion.div
           className="w-[350px] h-[400px] shadow-[10px_10px_20px_rgba(8,0,0,0.2)]
          bg-white flex flex-col gap-4 items-center justify-center p-[20px] transition-all
           duration-1000 hover:bg-[#ffa600] group rounded-sm"
+          ref={ref4}
+          initial={{ x: 450 }}
+          animate={isVisible4 ? { x: -20, opacity: 1 } : { x: 450, opacity: 0 }}
+          transition={{ duration: 0.8 }}
         >
           <span>
             <svg
@@ -200,7 +255,7 @@ export default function Body() {
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Distinctio, eos asperiores nobis molestias nam. Ex quos dicta as.
           </p>
-        </div>
+        </motion.div>
       </section>
     </>
   );
