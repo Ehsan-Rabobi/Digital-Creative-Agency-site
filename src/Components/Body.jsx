@@ -30,6 +30,7 @@ export default function Body() {
   //   };
   // }, []);
 
+
   const [isVisible1, setIsVisible1] = useState(false);
   const [isVisible2, setIsVisible2] = useState(false);
   const [isVisible3, setIsVisible3] = useState(false);
@@ -40,7 +41,7 @@ export default function Body() {
   const ref2 = createRef();
   const ref3 = createRef();
   const ref4 = createRef();
-  const ref5 = createRef();  // For the last section
+  const ref5 = createRef(); // For the last section
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,11 +75,9 @@ export default function Body() {
     };
   }, []);
 
-  
-
   return (
     <>
-      <section className="note mt-[120px] flex items-center justify-between">
+      <section className="mt-[120px] flex items-center justify-between">
         <motion.div
           ref={ref1}
           initial={{ x: -250 }}
@@ -123,13 +122,13 @@ export default function Body() {
       <section className="w-[100%] h-[500px] mt-[80px] flex items-center justify-center">
         <motion.img
           ref={ref3}
-          initial={{ y: 200 , opacity:0 }}
-          animate={isVisible3 ? { y: 0 , opacity:1 } : { y: 200 , opacity:0 }}
+          initial={{ y: 200, opacity: 0 }}
+          animate={isVisible3 ? { y: 0, opacity: 1 } : { y: 200, opacity: 0 }}
           transition={{ duration: 1 }}
           src={aboutPic}
         />
       </section>
-      <section className="card w-[100%] h-[550px] text-neutral-700 bg-neutral-200 mt-[120px] flex justify-evenly items-center p-[30px]">
+      <section className="w-[100%] h-[550px] text-neutral-700 bg-neutral-200 mt-[120px] flex justify-evenly items-center p-[30px]">
         <motion.div
           className="w-[350px] h-[400px] shadow-[10px_10px_20px_rgba(8,0,0,0.2)]
          bg-white flex flex-col gap-4 items-center justify-center p-[20px] transition-all
@@ -179,10 +178,13 @@ export default function Body() {
          bg-white flex flex-col gap-4 items-center justify-center p-[20px] transition-all
           duration-1000 hover:bg-[#ffa600] group rounded-sm"
           ref={ref4}
-          initial={{ y: 350 , opacity:0 , visibility:'hidden' }}
-          animate={isVisible4 ? { y: 0 , opacity:1 , visibility:'visible' } : { y: 350 , opacity:0 , visibility:'hidden' }}
+          initial={{ y: 350, opacity: 0, visibility: "hidden" }}
+          animate={
+            isVisible4
+              ? { y: 0, opacity: 1, visibility: "visible" }
+              : { y: 350, opacity: 0, visibility: "hidden" }
+          }
           transition={{ duration: 0.8 }}
-  
         >
           <span>
             <svg
@@ -257,9 +259,73 @@ export default function Body() {
           </p>
         </motion.div>
       </section>
+      <section className="bg-red-500 w-[100%] h-[400px] mt-[80px] flex">
+        <div className="w-[45%] h-[100%] bg-green-600 ">
+          <div
+            className="w-[100%] h-[60%] bg-yellow-600 flex 
+          pl-[70px] gap-2 items-center min-h-[150px]"
+          >
+            <div className="flex flex-col rotate-180">
+              <p className="rotate-90 text-[#ffa600]">WHO</p>
+              <p className="rotate-90 mt-6 mb-3 text-[#ffa600]">WE</p>
+              <p className="rotate-90 text-[#ffa600]">ARE</p>
+            </div>
+            <div>
+              <p className="text-[44px] text-neutral-800">Meet Our</p>
+              <p className="text-[44px] text-neutral-800">
+                <span className="font-bold">Talented</span> Team
+              </p>
+            </div>
+          </div>
+          <div className="w-[100%] h-[40%] pt-[20px] pl-[85px]">
+            <p className="text-[14px]">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore,
+              repellat, eos! Dignissimos expedita totam cum quidem autem alias
+              dolorum error a quia optio eligendi, amet animi reprehenderit,
+              quaerat.
+            </p>
+          </div>
+        </div>
+        <div className="w-[55%] h-[100%] bg-blue-600 flex items-center justify-evenly flex-col">
+          <div className="w-[520px] h-[260px] bg-pink-600">
+            
+          </div>
+          <div className="flex gap-3">
+            <button className="py-2 rounded-sm bg-gray-500 text-white active:scale-[0.9]">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.75 19.5 8.25 12l7.5-7.5"
+                />
+              </svg>
+            </button>
+            <button className="py-2 rounded-sm bg-gray-500 text-white active:scale-[0.9]">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
-
-
-
