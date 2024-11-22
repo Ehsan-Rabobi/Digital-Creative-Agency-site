@@ -2,6 +2,7 @@ import React, { createRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Box, Typography } from "@mui/material";
 import aboutPic from "../assets/img/about/about.png";
+import informationTeam from "../Utils/images";
 
 export default function Body() {
   // const [isVisible, setIsVisible] = useState(false);
@@ -30,18 +31,19 @@ export default function Body() {
   //   };
   // }, []);
 
-
   const [isVisible1, setIsVisible1] = useState(false);
   const [isVisible2, setIsVisible2] = useState(false);
   const [isVisible3, setIsVisible3] = useState(false);
   const [isVisible4, setIsVisible4] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const imageWidth = 270;
+  const totalImages = informationTeam.length;
 
-  // Create separate refs for each element
   const ref1 = createRef();
   const ref2 = createRef();
   const ref3 = createRef();
   const ref4 = createRef();
-  const ref5 = createRef(); // For the last section
+  const ref5 = createRef(); 
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,6 +76,16 @@ export default function Body() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const handleImageNextTeam = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalImages); 
+  };
+
+
+  const handleImagePrevTeam = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + totalImages) % totalImages); 
+  };
+
 
   return (
     <>
@@ -259,7 +271,7 @@ export default function Body() {
           </p>
         </motion.div>
       </section>
-      <section className="bg-red-500 w-[100%] h-[400px] mt-[80px] flex">
+      <section className="slider bg-red-500 w-[100%] h-[400px] mt-[80px] flex">
         <div className="w-[45%] h-[100%] bg-green-600 ">
           <div
             className="w-[100%] h-[60%] bg-yellow-600 flex 
@@ -287,11 +299,41 @@ export default function Body() {
           </div>
         </div>
         <div className="w-[55%] h-[100%] bg-blue-600 flex items-center justify-evenly flex-col">
-          <div className="w-[520px] h-[260px] bg-pink-600">
-            
+        <div className="w-[520px] h-[260px] bg-pink-600 flex items-center justify-start gap-[20px] overflow-hidden relative">
+            {/* {infoTeam} */}
+            <div
+             className="w-[250px] bg-blue-700 items-center gap-[20px] justify-between"
+              style={{
+                display: "flex",
+                transform: `translateX(${-currentIndex * imageWidth}px)`,
+                transition: "transform 0.5s ease-in-out",
+              }}
+            >
+              {informationTeam?.map((e, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="relative min-w-[250px] h-[260px] overflow-hidden"
+                  >
+                    <img
+                      src={e.img}
+                      alt={e.name}
+                      className="w-[250px] h-[100%] object-cover"
+                    />
+                    <div className="absolute top-0 left-0 flex flex-col items-center justify-center w-[100%] h-[100%] bg-[#000000a8] opacity-[0] hover:opacity-[1] transition-opacity duration-500 ease-in-out">
+                      <p className="text-[#ffa600] font-bold">{e.name}</p>
+                      <p className="text-white">{e.job}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
           <div className="flex gap-3">
-            <button className="py-2 rounded-sm bg-gray-500 text-white active:scale-[0.9]">
+            <button
+              onClick={handleImagePrevTeam}
+              className="py-2 rounded-sm bg-gray-500 text-white active:scale-[0.9]"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -307,7 +349,10 @@ export default function Body() {
                 />
               </svg>
             </button>
-            <button className="py-2 rounded-sm bg-gray-500 text-white active:scale-[0.9]">
+            <button
+              onClick={handleImageNextTeam}
+              className="py-2 rounded-sm bg-gray-500 text-white active:scale-[0.9]"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
