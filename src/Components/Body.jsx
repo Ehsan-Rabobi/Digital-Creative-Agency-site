@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Box, Typography } from "@mui/material";
 import aboutPic from "../assets/img/about/about.png";
 import informationTeam from "../Utils/images";
+import ourServicesPic from "../assets/img/services/laptop-lamp.png";
 
 export default function Body() {
   // const [isVisible, setIsVisible] = useState(false);
@@ -274,7 +275,7 @@ export default function Body() {
         </motion.div>
       </section>
 
-      <section className="slider w-[100%] h-[340px] mt-[80px]">
+      <section className="w-[100%] h-[340px] mt-[80px]">
         <div className="flex ">
           <motion.div
             ref={ref5}
@@ -419,13 +420,15 @@ export default function Body() {
           <div className="w-[100%] h-[50%] flex">
             <div className="h-[100%] w-[50%] flex items-center justify-center flex-col gap-3">
               <h2 className="justify-start">Web Development</h2>
-              <div style={{border:"2px solid gray"}} className="w-[580px] h-[28px] bg-white rounded-[20px] relative overflow-hidden">
+              <div
+                style={{ border: "2px solid gray" }}
+                className="w-[580px] h-[28px] bg-white rounded-[20px] relative overflow-hidden"
+              >
                 <motion.div
                   ref={ref2}
                   className={`absolute left-0 top-0 transition-all duration-1000 ${
                     isVisible2 ? "w-[77%]" : "w-[0%]"
                   } h-[28px] bg-sky-700 `}
-                  
                 ></motion.div>
               </div>
             </div>
@@ -439,6 +442,103 @@ export default function Body() {
                   } h-[28px] bg-sky-700 `}
                 ></motion.div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="w-[100%] h-[600px]  mt-[340px] flex flex-col items-center justify-center">
+        <span className="flex flex-col items-center gap-1 w-[100%] h-[20%] justify-center">
+          <p className="text-[#ffa600] text-[20px] font-bold">WHAT WE DO</p>
+          <p className="text-[46px] font-medium text-[#2b2b2b]">Our Services</p>
+        </span>
+        <div className="w-[100%] h-[80%] flex gap-4">
+          <div className="w-[55%] h-[100%] ">
+            <img
+              src={ourServicesPic}
+              alt=""
+              className="w-[100%] h-[100%] object-contain"
+            />
+          </div>
+          <div className="w-[40%] h-[100%] flex flex-col gap-6">
+            <div className="w-[100%] h-[33%]  flex items-center gap-3 justify-center group">
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="size-16 group-hover:-translate-x-10 transition-all duration-700 group-hover:text-[#ffa600]"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M20.599 1.5c-.376 0-.743.111-1.055.32l-5.08 3.385a18.747 18.747 0 0 0-3.471 2.987 10.04 10.04 0 0 1 4.815 4.815 18.748 18.748 0 0 0 2.987-3.472l3.386-5.079A1.902 1.902 0 0 0 20.599 1.5Zm-8.3 14.025a18.76 18.76 0 0 0 1.896-1.207 8.026 8.026 0 0 0-4.513-4.513A18.75 18.75 0 0 0 8.475 11.7l-.278.5a5.26 5.26 0 0 1 3.601 3.602l.502-.278ZM6.75 13.5A3.75 3.75 0 0 0 3 17.25a1.5 1.5 0 0 1-1.601 1.497.75.75 0 0 0-.7 1.123 5.25 5.25 0 0 0 9.8-2.62 3.75 3.75 0 0 0-3.75-3.75Z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </span>
+              <span className="flex flex-col gap-2">
+                <p className="text-[14px] font-bold text-[#ffa600] transition-all duration-700 group-hover:text-[#1b1b1b]">
+                  SERVICES 1
+                </p>
+                <p className="text-[22px] text-[#1b1b1b]">Web Design</p>
+                <p className="text-[#1b1b1b] w-[450px]">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Iusto tempora aut, nesciunt rem excepturi itaque laborum odio,
+                  id explicabo.
+                </p>
+              </span>
+            </div>
+            <div className="w-[100%] h-[33%]  flex items-center gap-3 justify-center group">
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="size-16 group-hover:-translate-x-10 transition-all duration-700 group-hover:text-[#ffa600]"
+                >
+                  <path d="M10.5 18.75a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5h-3Z" />
+                  <path
+                    fillRule="evenodd"
+                    d="M8.625.75A3.375 3.375 0 0 0 5.25 4.125v15.75a3.375 3.375 0 0 0 3.375 3.375h6.75a3.375 3.375 0 0 0 3.375-3.375V4.125A3.375 3.375 0 0 0 15.375.75h-6.75ZM7.5 4.125C7.5 3.504 8.004 3 8.625 3H9.75v.375c0 .621.504 1.125 1.125 1.125h2.25c.621 0 1.125-.504 1.125-1.125V3h1.125c.621 0 1.125.504 1.125 1.125v15.75c0 .621-.504 1.125-1.125 1.125h-6.75A1.125 1.125 0 0 1 7.5 19.875V4.125Z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </span>
+              <span className="flex flex-col gap-2">
+                <p className="text-[14px] font-bold text-[#ffa600] transition-all duration-700 group-hover:text-[#1b1b1b]">
+                  SERVICES 2
+                </p>
+                <p className="text-[22px] text-[#1b1b1b]">Web Development</p>
+                <p className="text-[#1b1b1b] w-[450px]">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Iusto tempora aut, nesciunt rem excepturi itaque laborum odio,
+                  id explicabo.
+                </p>
+              </span>
+            </div>
+            <div className="w-[100%] h-[33%] flex items-center gap-3 justify-center group">
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="size-16 group-hover:-translate-x-10 transition-all duration-700 group-hover:text-[#ffa600]"
+                >
+                  <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
+                  <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
+                </svg>
+              </span>
+              <span className="flex flex-col gap-2">
+                <p className="text-[14px] font-bold text-[#ffa600] transition-all duration-700 group-hover:text-[#1b1b1b]">
+                  SERVICES 3
+                </p>
+                <p className="text-[22px] text-[#1b1b1b]">Digital Marketing</p>
+                <p className="text-[#1b1b1b] w-[450px]">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Iusto tempora aut, nesciunt rem excepturi itaque laborum odio,
+                  id explicabo.
+                </p>
+              </span>
             </div>
           </div>
         </div>
