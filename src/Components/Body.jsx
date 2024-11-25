@@ -447,27 +447,27 @@ export default function Body() {
         </div>
       </section>
 
-      <section className="w-[100%] h-[600px]  mt-[340px] flex flex-col items-center justify-center">
+      <section className="w-[100%] h-[600px] p-7  mt-[340px] flex flex-col items-center justify-center">
         <span className="flex flex-col items-center gap-1 w-[100%] h-[20%] justify-center">
           <p className="text-[#ffa600] text-[20px] font-bold">WHAT WE DO</p>
           <p className="text-[46px] font-medium text-[#2b2b2b]">Our Services</p>
         </span>
         <div className="w-[100%] h-[80%] flex gap-4">
-          <div className="w-[55%] h-[100%] ">
+          <div className="w-[55%] h-[100%] p-6">
             <img
               src={ourServicesPic}
               alt=""
               className="w-[100%] h-[100%] object-contain"
             />
           </div>
-          <div className="w-[40%] h-[100%] flex flex-col gap-6">
+          <div className="w-[40%] h-[100%] flex flex-col gap-6 ">
             <div className="w-[100%] h-[33%]  flex items-center gap-3 justify-center group">
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  className="size-16 group-hover:-translate-x-10 transition-all duration-700 group-hover:text-[#ffa600]"
+                  className="size-12 group-hover:-translate-x-10 transition-all duration-700 group-hover:text-[#ffa600]"
                 >
                   <path
                     fillRule="evenodd"
@@ -494,7 +494,7 @@ export default function Body() {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  className="size-16 group-hover:-translate-x-10 transition-all duration-700 group-hover:text-[#ffa600]"
+                  className="size-12 group-hover:-translate-x-10 transition-all duration-700 group-hover:text-[#ffa600]"
                 >
                   <path d="M10.5 18.75a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5h-3Z" />
                   <path
@@ -522,7 +522,7 @@ export default function Body() {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  className="size-16 group-hover:-translate-x-10 transition-all duration-700 group-hover:text-[#ffa600]"
+                  className="size-12 group-hover:-translate-x-10 transition-all duration-700 group-hover:text-[#ffa600]"
                 >
                   <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
                   <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
@@ -542,6 +542,18 @@ export default function Body() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="w-[100%] h-[600px] bg-red-500 mt-[80px]">
+        <span>
+          <ul>
+            <li className="uppercase">Creativity</li>
+            <li className="uppercase">Strategy</li>
+            <li className="uppercase">Design</li>
+            <li className="uppercase">Development</li>
+          </ul>
+        </span>
+        <div></div>
       </section>
     </>
   );
