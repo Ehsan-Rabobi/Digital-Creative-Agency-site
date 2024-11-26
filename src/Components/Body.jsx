@@ -396,7 +396,13 @@ export default function Body() {
           <div className="w-[100%] h-[50%] flex">
             <div className="h-[100%] w-[50%] flex items-center justify-center flex-col gap-3">
               <h2 className="">Web Design</h2>
-              <div className="w-[580px] h-[28px] bg-white rounded-[20px] relative overflow-hidden">
+              <div
+                className="w-[580px] h-[28px] bg-gray-200 rounded-[20px] relative overflow-hidden"
+                style={{
+                  boxShadow: "0px 0px 15px rgba(0,0,0,0.1)",
+                  border: "1px solid #8b8b8b16",
+                }}
+              >
                 <motion.div
                   ref={ref2}
                   className={`absolute left-0 top-0 transition-all duration-1000 ${
@@ -407,7 +413,14 @@ export default function Body() {
             </div>
             <div className="h-[100%] w-[50%] flex items-center justify-center flex-col gap-3">
               <h2 className="justify-start">Photoshop/Illustration</h2>
-              <div className="w-[580px] h-[28px] bg-white rounded-[20px] relative overflow-hidden">
+              <div
+                className="w-[580px] h-[28px] bg-gray-200 rounded-[20px] relative overflow-hidden"
+                style={{
+                  boxShadow: "0px 0px 15px rgba(0,0,0,0.1)",
+                  border: "1px solid #8b8b8b16",
+                }}
+              >
+                {" "}
                 <motion.div
                   ref={ref2}
                   className={`absolute left-0 top-0 transition-all duration-1000 ${
@@ -421,8 +434,11 @@ export default function Body() {
             <div className="h-[100%] w-[50%] flex items-center justify-center flex-col gap-3">
               <h2 className="justify-start">Web Development</h2>
               <div
-                style={{ border: "2px solid gray" }}
-                className="w-[580px] h-[28px] bg-white rounded-[20px] relative overflow-hidden"
+                className="w-[580px] h-[28px] bg-gray-200 rounded-[20px] relative overflow-hidden"
+                style={{
+                  boxShadow: "0px 0px 15px rgba(0,0,0,0.1)",
+                  border: "1px solid #8b8b8b16",
+                }}
               >
                 <motion.div
                   ref={ref2}
@@ -434,7 +450,14 @@ export default function Body() {
             </div>
             <div className="h-[100%] w-[50%] flex items-center justify-center flex-col gap-3">
               <h2 className="justify-start">Digital Marketing</h2>
-              <div className="w-[580px] h-[28px] bg-white rounded-[20px] relative overflow-hidden">
+              <div
+                className="w-[580px] h-[28px] bg-gray-200 rounded-[20px] relative overflow-hidden"
+                style={{
+                  boxShadow: "0px 0px 15px rgba(0,0,0,0.1)",
+                  border: "1px solid #8b8b8b16",
+                }}
+              >
+                {" "}
                 <motion.div
                   ref={ref2}
                   className={`absolute left-0 top-0 transition-all duration-1000 ${
@@ -544,16 +567,22 @@ export default function Body() {
         </div>
       </section>
 
-      <section className="w-[100%] h-[600px] bg-red-500 mt-[80px]">
-        <span>
-          <ul>
-            <li className="uppercase">Creativity</li>
-            <li className="uppercase">Strategy</li>
-            <li className="uppercase">Design</li>
-            <li className="uppercase">Development</li>
-          </ul>
-        </span>
-        <div></div>
+      <section className="w-[100%] h-[700px] bg-neutral-200 mt-[80px]">
+        <ul
+          className="w-[100%] h-[15%] bg-emerald-300 flex items-center justify-center gap-12 
+        cursor-pointer text-[14px] text-neutral-700"
+        >
+          <li className="uppercase active:scale-[0.9]">Creativity</li>
+          <li className="uppercase active:scale-[0.9]">Strategy</li>
+          <li className="uppercase active:scale-[0.9]">Design</li>
+          <li className="uppercase active:scale-[0.9]">Development</li>
+        </ul>
+        <div className="w-[100%] h-[85%] bg-gray-800 flex items-center justify-center">
+          <div className="w-[85%] h-[80%] bg-white flex rounded-[4px] overflow-hidden">
+            <div className="w-[50%] h-[100%] bg-lime-200">image</div>
+            <div className="w-[50%] h-[100%] bg-pink-300">content</div>
+          </div>
+        </div>
       </section>
     </>
   );
