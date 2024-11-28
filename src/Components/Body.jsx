@@ -4,6 +4,8 @@ import { Box, Typography } from "@mui/material";
 import aboutPic from "../assets/img/about/about.png";
 import informationTeam from "../Utils/images";
 import ourServicesPic from "../assets/img/services/laptop-lamp.png";
+import ServiceTab from "./ServiceTab";
+
 
 export default function Body() {
   // const [isVisible, setIsVisible] = useState(false);
@@ -88,6 +90,11 @@ export default function Body() {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + totalImages) % totalImages);
   };
 
+
+
+
+
+  
   return (
     <>
       <section className="mt-[120px] flex items-center justify-between">
@@ -567,23 +574,8 @@ export default function Body() {
         </div>
       </section>
 
-      <section className="w-[100%] h-[700px] bg-neutral-200 mt-[80px]">
-        <ul
-          className="w-[100%] h-[15%] bg-emerald-300 flex items-center justify-center gap-12 
-        cursor-pointer text-[14px] text-neutral-700"
-        >
-          <li className="uppercase active:scale-[0.9]">Creativity</li>
-          <li className="uppercase active:scale-[0.9]">Strategy</li>
-          <li className="uppercase active:scale-[0.9]">Design</li>
-          <li className="uppercase active:scale-[0.9]">Development</li>
-        </ul>
-        <div className="w-[100%] h-[85%] bg-gray-800 flex items-center justify-center">
-          <div className="w-[85%] h-[80%] bg-white flex rounded-[4px] overflow-hidden">
-            <div className="w-[50%] h-[100%] bg-lime-200">image</div>
-            <div className="w-[50%] h-[100%] bg-pink-300">content</div>
-          </div>
-        </div>
-      </section>
+
+      <ServiceTab/>
     </>
   );
 }
