@@ -9,7 +9,7 @@ export default function ServiceTab() {
     const fetchDataAsync = async () => {
       try {
         const response = await fetchData("https://fakestoreapi.com/products");
-        const slicedData = response.slice(13, 17);
+        const slicedData = response.slice(8,12);
         setData(slicedData);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -23,8 +23,8 @@ export default function ServiceTab() {
   };
 
   return (
-    <div className="slider relative w-[100%] h-[600px] my-[40px] bg-red-400 mt-[150px]">
-      <div className="titles absolute top-0 left-0 w-[100%] h-[15%] bg-slate-300 flex justify-center p-[28px] gap-[70px]">
+    <div className="slider relative w-[100%] h-[650px] my-[40px] bg-slate-200  mt-[150px]">
+      <div className="titles absolute top-0 left-0 w-[100%] h-[15%]  flex justify-center p-[32px] gap-[70px]">
         {data.map((item, index) => (
           <div
             key={item.id}
@@ -42,30 +42,53 @@ export default function ServiceTab() {
       </div>
 
       <div className="photos absolute top-[90px] left-0 w-[100%] h-[85%] flex items-center justify-center">
-          {data.map((item, index) => (
-            <>
-        <div className="w-[80%] h-[450px] bg-blue-600 absolute">
+        {data.map((item, index) => (
+          <>
+            <div className="w-[80%] h-[450px] absolute overflow-hidden rounded-md">
               <div
                 key={item.id}
                 className={`photo ${activeIndex === index ? "active" : ""}`}
-                // className={`${
-                //   activeIndex === index
-                //     ? "absolute top-0 left-0 w-[100%] h-[100%] block"
-                //     : "absolute top-0 left-0 w-[100%] h-[100%] none"
-                // }`}
               >
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-[100%] h-[100%] object-cover z-20"
+                  className="w-[100%] h-[100%] object-fill z-20"
                 />
               </div>
-              <div key={item.id} className={`${activeIndex === index ? 'absolute right-0 z-[100000]' : ''}`}>
-
+              <div
+                key={item.id}
+                className={`${
+                  activeIndex === index
+                    ? "absolute right-0 bg-white w-[50%] h-[100%]"
+                    : "bg-green-400 "
+                }`}
+                style={{
+                  zIndex: "100",
+                  display: "flex",
+                  justifyContent: "center",
+                  flexDirection: "column",
+                  alignItems: "start",
+                  paddingLeft: "25px",
+                  gap: "20px",
+                }}
+              >
+                {activeIndex === index && (
+                  <>
+                    <p className="text-[38px] text-slate-600">0{item.id}</p>
+                    <p className="text-[38px]">{item.title.slice(0, 20)}.</p>
+                    <p className="w-[500px]">
+                      {item.description.slice(0, 155)}
+                    </p>
+                    <button className="uppercase bg-[#ffa600] py-[5px] px-[15px] rounded text-white
+                     hover:text-[#ffa600] hover:bg-[#d4d4d4] transition-all font-serif">
+                      get in touch
+                    </button>
+                  </>
+                )}
               </div>
-        </div>
-            </>
-          ))}
+            </div>
+          </>
+        ))}
       </div>
     </div>
   );

@@ -70,7 +70,7 @@ export default function Header() {
             justifyContent: "space-between",
             width: "100%",
             height: "125px",
-            zIndex: "1111",
+            zIndex: "11111111",
             padding: "60px",
             backgroundColor: "transparent",
             transition: "all 0.8s ease",

@@ -54,12 +54,12 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 100px;
+  padding: 20px;
   width: 50%;
   height: 100%;
   display: none;
-  z-index: 10000  ;
-  background-color: chartreuse  ;
+  z-index: 100  ;
+  background-color: rgb(255, 255, 255)  ;
   
 }
 
