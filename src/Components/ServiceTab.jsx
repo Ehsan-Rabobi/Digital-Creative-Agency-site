@@ -23,7 +23,7 @@ export default function ServiceTab() {
   };
 
   return (
-    <div className="slider relative w-[100%] h-[650px] my-[40px] bg-slate-200  mt-[150px]">
+    <div className="slider relative w-[100%] h-[650px] my-[40px] bg-[#d1d1d1]  mt-[150px]">
       <div className="titles absolute top-0 left-0 w-[100%] h-[15%]  flex justify-center p-[32px] gap-[70px]">
         {data.map((item, index) => (
           <div

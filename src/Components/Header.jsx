@@ -1,7 +1,7 @@
 import { Box, ListItem, MenuList, Stack, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import videoHead from "../assets/video/video_2024-11-15_16-51-47.mp4";
+import videoHead from "../assets/video/InShot_20241130_193756484.mp4";
 import { KeyboardArrowDown } from "@mui/icons-material";
 
 export default function Header() {
@@ -127,7 +127,9 @@ export default function Header() {
             position={"absolute"}
             top={"50%"}
             left={"50%"}
-            sx={{ transform: "translate(-50%,-50%)" }}
+            sx={{ transform: "translate(-50%,-50%)"  , backgroundColor:"#00000076" , width:"100%" , height:"100%" , display:"flex", 
+              alignItems:"center" , justifyContent:"center"
+            }}
           >
             <Box
               display={"flex"}

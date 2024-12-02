@@ -6,7 +6,6 @@ import informationTeam from "../Utils/images";
 import ourServicesPic from "../assets/img/services/laptop-lamp.png";
 import ServiceTab from "./ServiceTab";
 
-
 export default function Body() {
   // const [isVisible, setIsVisible] = useState(false);
   // const ref = createRef();
@@ -90,11 +89,6 @@ export default function Body() {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + totalImages) % totalImages);
   };
 
-
-
-
-
-  
   return (
     <>
       <section className="mt-[120px] flex items-center justify-between">
@@ -574,8 +568,113 @@ export default function Body() {
         </div>
       </section>
 
+      <ServiceTab />
 
-      <ServiceTab/>
+      <section className="w-[100%] h-[450px] bg-gray-400 mt-[70px] flex">
+        <div className="flex w-[40%] pl-[30px] gap-2 bg-red-500 items-center h-[100%] justify-center">
+          <div className="flex flex-col rotate-180">
+            <p className="rotate-90 text-[#ffa600]">WHO</p>
+            <p className="rotate-90 mt-6 mb-3 text-[#ffa600]">WE</p>
+            <p className="rotate-90 text-[#ffa600]">ARE</p>
+          </div>
+          <div>
+            <div className="text-[44px] text-neutral-800">What Our</div>
+            <div className="text-[44px] text-neutral-800">
+              <span className="font-bold">Customers</span> Say
+            </div>
+          </div>
+        </div>
+        <div className="w-[60%] h-[100%] bg-green-400 flex items-center justify-center">
+          <div className="card w-[670px] h-[300px] bg-[#ffa600]">
+            <div className="w-[100%] h-[25%] bg-fuchsia-300 flex items-center justify-between px-[50px]">
+              <p className="text-[32px] font-medium">Quality Support</p>
+              <span className="flex">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="size-6"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="size-6"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="size-6"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div className="w-[100%] h-[35%] bg-gray-700 flex items-center justify-center">
+              <p className="text-[14px] w-[570px] text-justify">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat
+                aperiam eum, corporis tenetur nisi autem in exercitationem atque
+                maiores. Molestias alias velit maxime similique, repudiandae
+                ullam ad dolor illo dignissimos.
+              </p>
+            </div>
+            <div className="w-[100%] h-[30%] bg-purple-700 flex items-center pl-6 gap-8">
+              <div className="w-[75px] h-[85%] bg-gray-400 rounded-full"></div>
+              <span>
+                <p>name</p>
+                <p>job</p>
+              </span>
+            </div>
+            <div className="w-[100%] h-[10%] flex items-center justify-center gap-5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-6 cursor-pointer active:scale-[0.9]"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.75 19.5 8.25 12l7.5-7.5"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-6 cursor-pointer active:scale-[0.9]"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
