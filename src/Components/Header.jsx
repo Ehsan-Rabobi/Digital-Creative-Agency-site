@@ -23,7 +23,7 @@ export default function Header() {
           cursor: "pointer",
           fontWeight: "bold",
           fontFamily: "sans-serif",
-          color: `${!changeNav ? 'white' : 'black'}`,
+          color: `${!changeNav ? "white" : "black"}`,
           fontSize: "14px",
           "&:hover": {
             color: "#ffa600",
@@ -43,12 +43,11 @@ export default function Header() {
     const headerHeight = document.querySelector("nav")?.offsetHeight - 50;
     if (window.scrollY > headerHeight) {
       setChangeNav(true);
-    } else if(window.scrollY === 0) {
+    } else if (window.scrollY === 0) {
       setChangeNav(false);
     }
   };
   useEffect(() => {
-
     const handleScroll = () => {
       handleChangeNav();
     };
@@ -63,38 +62,47 @@ export default function Header() {
     <>
       <Stack>
         <nav
-          style={ !changeNav ?{
-            position: "fixed",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            width: "100%",
-            height: "125px",
-            zIndex: "11111111",
-            padding: "60px",
-            backgroundColor: "transparent",
-            transition: "all 0.8s ease",
-          } : {
-            position: "fixed",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            width: "100%",
-            height:'80px',
-            zIndex: "1111",
-            padding: "0px 60px",
-            backgroundColor:"white",
-            transition: "all 0.8s ease",
-            boxShadow:"0px 0px 18px 7px rgba(0,0,0,0.3)"
-          }}
+          style={
+            !changeNav
+              ? {
+                  position: "fixed",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  width: "100%",
+                  height: "125px",
+                  zIndex: "11111111",
+                  padding: "60px",
+                  backgroundColor: "transparent",
+                  transition: "all 0.8s ease",
+                }
+              : {
+                  position: "fixed",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  width: "100%",
+                  height: "80px",
+                  zIndex: "1111",
+                  padding: "0px 60px",
+                  backgroundColor: "white",
+                  transition: "all 0.8s ease",
+                  boxShadow: "0px 0px 18px 7px rgba(0,0,0,0.3)",
+                }
+          }
         >
           <Box>
             <Typography
               variant="h4"
-              sx={{ color: `${changeNav ? '#bebebe' : 'white'}`,cursor:"pointer" , fontWeight: "bold", padding: "20px" }}
+              sx={{
+                color: `${changeNav ? "#bebebe" : "white"}`,
+                cursor: "pointer",
+                fontWeight: "bold",
+                padding: "20px",
+              }}
             >
-              <span style={ {color:"#ffa600"}}>S</span>O
-              <span style={ {color:"#ffa600"}}>L</span>O
+              <span style={{ color: "#ffa600" }}>S</span>O
+              <span style={{ color: "#ffa600" }}>L</span>O
             </Typography>
           </Box>
           <Box display={"flex"}>
@@ -127,8 +135,14 @@ export default function Header() {
             position={"absolute"}
             top={"50%"}
             left={"50%"}
-            sx={{ transform: "translate(-50%,-50%)"  , backgroundColor:"#00000076" , width:"100%" , height:"100%" , display:"flex", 
-              alignItems:"center" , justifyContent:"center"
+            sx={{
+              transform: "translate(-50%,-50%)",
+              backgroundColor: "#00000076",
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
             <Box

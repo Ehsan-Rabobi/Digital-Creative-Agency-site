@@ -8,6 +8,9 @@ import client1Pic from "../assets/img/testimonial/client-1.jpg";
 import client2Pic from "../assets/img/testimonial/client-2.jpg";
 import client3Pic from "../assets/img/testimonial/client-3.jpg";
 import ServiceTab from "./ServiceTab";
+import videoHead from "../assets/video/InShot_20241130_193756484.mp4";
+import CountUp from "react-countup";
+import ScrollTrigger from "react-scroll-trigger";
 
 export default function Body() {
   // const [isVisible, setIsVisible] = useState(false);
@@ -41,10 +44,14 @@ export default function Body() {
   const [isVisible3, setIsVisible3] = useState(false);
   const [isVisible4, setIsVisible4] = useState(false);
   const [isVisible5, setIsVisible5] = useState(false);
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const imageWidth = 270;
+
   const totalImages = informationTeam.length;
   const sliderRef = createRef(null);
+
+  const [counterState, setCounterState] = useState(false);
 
   const ref1 = createRef();
   const ref2 = createRef();
@@ -856,18 +863,24 @@ export default function Body() {
           <p className="text-[48px] text-[#1d1d1d]">Our Pricing</p>
         </div>
         <div className="flex justify-center items-center w-[100%] h-[80%] gap-8">
-          <div className="w-[370px] h-[510px] bg-white p-[10px] rounded hover:bg-[#ffa600] 
+          <div
+            className="w-[370px] h-[510px] bg-white p-[10px] rounded hover:bg-[#ffa600] 
           transition-all duration-[600ms] group"
-          style={{boxShadow:"0px 0px 25px #adadad"}}>
-            <p className="text-[#ffa600] flex items-center text-[24px] font-serif w-[100%] h-[10%] font-semibold
-            group-hover:text-white transition-all duration-[600ms]">
+            style={{ boxShadow: "0px 0px 25px #adadad" }}
+          >
+            <p
+              className="text-[#ffa600] flex items-center text-[24px] font-serif w-[100%] h-[10%] font-semibold
+            group-hover:text-white transition-all duration-[600ms]"
+            >
               Basic
             </p>
 
             <div className="w-[100%] h-[2px] my-2 bg-[#dadada]"></div>
 
-            <div className="flex items-center justify-between w-[100%] h-[25%]
-             group-hover:text-white transition-all duration-[600ms]">
+            <div
+              className="flex items-center justify-between w-[100%] h-[25%]
+             group-hover:text-white transition-all duration-[600ms]"
+            >
               <span className="flex w-[25%] h-[100%] items-center ">
                 <span className=" mb-6 text-[24px]">$</span>
                 <span className="flex flex-col justify-center items-center">
@@ -883,8 +896,10 @@ export default function Body() {
 
             <div className="w-[100%] h-[2px] my-2 bg-[#dadada]"></div>
 
-            <ul className="flex flex-col w-[100%] h-[45%] justify-evenly 
-            *:group-hover:text-white *:transition-all *:duration-[600ms]">
+            <ul
+              className="flex flex-col w-[100%] h-[45%] justify-evenly 
+            *:group-hover:text-white *:transition-all *:duration-[600ms]"
+            >
               <li className="flex gap-2 items-center text-[14px] text-[#242424]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -973,23 +988,33 @@ export default function Body() {
             </ul>
 
             <span className="w-[100%] h-[10%] mt-2 flex items-center justify-center">
-              <button className="w-[100%] uppercase h-[35px] bg-[#ffa600] text-white rounded
-              group-hover:text-black group-hover:bg-white transition-all duration-[600ms]">
-              Get Started</button>
+              <button
+                className="w-[100%] uppercase h-[35px] bg-[#ffa600] text-white rounded
+              group-hover:text-black group-hover:bg-white transition-all duration-[600ms]"
+              >
+                Get Started
+              </button>
             </span>
           </div>
-          <div style={{boxShadow:"0px 0px 25px #adadad"}} className="w-[370px] h-[510px] bg-[#1a1a1a] *:text-white
-           p-[10px] rounded hover:bg-[#ffa600] transition-all duration-[600ms] group">
-            <p className="text-[#ffa600] flex items-center text-[24px] font-serif
+          <div
+            style={{ boxShadow: "0px 0px 25px #adadad" }}
+            className="w-[370px] h-[510px] bg-[#1a1a1a] *:text-white
+           p-[10px] rounded hover:bg-[#ffa600] transition-all duration-[600ms] group"
+          >
+            <p
+              className="text-[#ffa600] flex items-center text-[24px] font-serif
              w-[100%] h-[10%] font-semibold
-            group-hover:text-white transition-all duration-[600ms]">
+            group-hover:text-white transition-all duration-[600ms]"
+            >
               Unlimited
             </p>
 
             <div className="w-[100%] h-[2px] my-2 bg-[#dadada]"></div>
 
-            <div className="flex items-center justify-between w-[100%] h-[25%]
-             group-hover:text-white transition-all duration-[600ms]">
+            <div
+              className="flex items-center justify-between w-[100%] h-[25%]
+             group-hover:text-white transition-all duration-[600ms]"
+            >
               <span className="flex w-[25%] h-[100%] items-center ">
                 <span className=" mb-6 text-[24px]">$</span>
                 <span className="flex flex-col justify-center items-center">
@@ -1005,8 +1030,10 @@ export default function Body() {
 
             <div className="w-[100%] h-[2px] my-2 bg-[#dadada]"></div>
 
-            <ul className="flex flex-col w-[100%] h-[45%] justify-evenly 
-            *:group-hover:text-white *:transition-all *:duration-[600ms]">
+            <ul
+              className="flex flex-col w-[100%] h-[45%] justify-evenly 
+            *:group-hover:text-white *:transition-all *:duration-[600ms]"
+            >
               <li className="flex gap-2 items-center text-[14px] text-[#ffffff]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1095,25 +1122,35 @@ export default function Body() {
             </ul>
 
             <span className="w-[100%] h-[10%] mt-2 flex items-center justify-center">
-              <button className="w-[100%] uppercase h-[35px] bg-[#ffffff] text-black rounded
-              group-hover:text-black group-hover:bg-white transition-all duration-[600ms]">
-              Get Started</button>
+              <button
+                className="w-[100%] uppercase h-[35px] bg-[#ffffff] text-black rounded
+              group-hover:text-black group-hover:bg-white transition-all duration-[600ms]"
+              >
+                Get Started
+              </button>
             </span>
           </div>
-          <div style={{boxShadow:"0px 0px 25px #adadad"}} className="w-[370px] h-[510px] bg-white p-[10px] rounded hover:bg-[#ffa600] transition-all duration-[600ms] group">
-            <p className="text-[#ffa600] flex items-center text-[24px] font-serif w-[100%] h-[10%] font-semibold
-            group-hover:text-white transition-all duration-[600ms]">
-             Professional
+          <div
+            style={{ boxShadow: "0px 0px 25px #adadad" }}
+            className="w-[370px] h-[510px] bg-white p-[10px] rounded hover:bg-[#ffa600] transition-all duration-[600ms] group"
+          >
+            <p
+              className="text-[#ffa600] flex items-center text-[24px] font-serif w-[100%] h-[10%] font-semibold
+            group-hover:text-white transition-all duration-[600ms]"
+            >
+              Professional
             </p>
 
             <div className="w-[100%] h-[2px] my-2 bg-[#dadada]"></div>
 
-            <div className="flex items-center justify-between w-[100%] h-[25%]
-             group-hover:text-white transition-all duration-[600ms]">
+            <div
+              className="flex items-center justify-between w-[100%] h-[25%]
+             group-hover:text-white transition-all duration-[600ms]"
+            >
               <span className="flex w-[25%] h-[100%] items-center ">
                 <span className=" mb-6 text-[24px]">$</span>
                 <span className="flex flex-col justify-center items-center">
-                  <p className="text-[42px]">29</p>
+                  <p className="text-[42px]">96</p>
                   <p className="text-[12px]">Month</p>
                 </span>
               </span>
@@ -1125,8 +1162,10 @@ export default function Body() {
 
             <div className="w-[100%] h-[2px] my-2 bg-[#dadada]"></div>
 
-            <ul className="flex flex-col w-[100%] h-[45%] justify-evenly 
-            *:group-hover:text-white *:transition-all *:duration-[600ms]">
+            <ul
+              className="flex flex-col w-[100%] h-[45%] justify-evenly 
+            *:group-hover:text-white *:transition-all *:duration-[600ms]"
+            >
               <li className="flex gap-2 items-center text-[14px] text-[#242424]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1215,11 +1254,141 @@ export default function Body() {
             </ul>
 
             <span className="w-[100%] h-[10%] mt-2 flex items-center justify-center">
-              <button className="w-[100%] uppercase h-[35px] bg-[#ffa600] text-white rounded
-              group-hover:text-black group-hover:bg-white transition-all duration-[600ms]">
-              Get Started</button>
+              <button
+                className="w-[100%] uppercase h-[35px] bg-[#ffa600] text-white rounded
+              group-hover:text-black group-hover:bg-white transition-all duration-[600ms]"
+              >
+                Get Started
+              </button>
             </span>
           </div>
+        </div>
+      </section>
+
+      <section className="w-[100%] h-[500px] mt-[120px] relative">
+        <video
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            filter: "rgba(0,0,0,0.2)",
+          }}
+          autoPlay
+          playsInline
+          loop
+          muted
+        >
+          <source src={videoHead} />
+        </video>
+        <div className="absolute left-0 top-0 w-[100%] h-[100%] bg-[#000000ef] p-[50px]">
+          <div className="flex w-[100%] pl-[10px] gap-2 items-center h-[45%] ">
+            <div className="flex flex-col rotate-180">
+              <p className="rotate-90 text-[#ffa600]">FUN</p>
+              <p className="rotate-90 mt-6 mb-3 text-[#ffa600]">FACTS</p>
+            </div>
+            <div>
+              <p className="text-[44px] text-white">We Deliver</p>
+              <p className="text-[44px] text-white flex gap-5">
+                <p className="font-bold">Excellent</p> Services
+              </p>
+            </div>
+          </div>
+          <ScrollTrigger onEnter={()=>setCounterState(true)} onExit={()=>setCounterState(false)}>
+            <div className="flex items-center w-full h-[55%] justify-center gap-7">
+              <div className="group  transition-all duration-[600ms] hover:bg-[#ffa600] w-[280px] h-[180px] bg-[#3b3b3ba6] rounded flex items-center justify-center gap-1 flex-col">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="size-12 text-[#ffa600] transition-all duration-[600ms] group-hover:text-black group-hover:-translate-y-5"
+                >
+                  <path d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.036-.84-1.875-1.875-1.875h-.75ZM9.75 8.625c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-.75a1.875 1.875 0 0 1-1.875-1.875V8.625ZM3 13.125c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v6.75c0 1.035-.84 1.875-1.875 1.875h-.75A1.875 1.875 0 0 1 3 19.875v-6.75Z" />
+                </svg>
+                <p className="text-white text-[32px]">
+                  {
+                    counterState
+                    &&
+                   <CountUp start={0} end={25} duration={2.75}/>
+                  }
+                </p>
+                <p className="text-white text-[14px]">Years Experience</p>
+              </div>
+              <div className="group  transition-all duration-[600ms] hover:bg-[#ffa600] w-[280px] h-[180px] bg-[#3b3b3ba6] rounded flex items-center justify-center gap-1 flex-col">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="size-12 text-[#ffa600] transition-all duration-[600ms] group-hover:text-black group-hover:-translate-y-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"
+                  />
+                </svg>
+
+                <p className="text-white text-[32px]">
+                {
+                    counterState
+                    &&
+                   <CountUp start={0} end={476} duration={2.75}/>
+                  }
+                </p>
+                <p className="text-white text-[14px]">Projects Done</p>
+              </div>
+              <div className="group  transition-all duration-[600ms] hover:bg-[#ffa600] w-[280px] h-[180px] bg-[#3b3b3ba6] rounded flex items-center justify-center gap-1 flex-col">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="size-12 text-[#ffa600] transition-all duration-[600ms] group-hover:text-black group-hover:-translate-y-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 0 1-.982-3.172M9.497 14.25a7.454 7.454 0 0 0 .981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 0 0 7.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 0 0 2.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 0 1 2.916.52 6.003 6.003 0 0 1-5.395 4.972m0 0a6.726 6.726 0 0 1-2.749 1.35m0 0a6.772 6.772 0 0 1-3.044 0"
+                  />
+                </svg>
+
+                <p className="text-white text-[32px]">
+                {
+                    counterState
+                    &&
+                   <CountUp start={0} end={115} duration={2.75}/>
+                  }
+                </p>
+                <p className="text-white text-[14px]">Awards Received</p>
+              </div>
+              <div className="group  transition-all duration-[600ms] hover:bg-[#ffa600] w-[280px] h-[180px] bg-[#3b3b3ba6] rounded flex items-center justify-center gap-1 flex-col">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="size-12 text-[#ffa600] transition-all duration-[600ms] group-hover:text-black group-hover:-translate-y-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z"
+                  />
+                </svg>
+                <p className="text-white text-[32px]">
+                {
+                    counterState
+                    &&
+                   <CountUp start={0} end={276} duration={2.75}/>
+                  }
+                </p>
+                <p className="text-white text-[14px]">Happy Clients</p>
+              </div>
+            </div>
+          </ScrollTrigger>
         </div>
       </section>
     </>
