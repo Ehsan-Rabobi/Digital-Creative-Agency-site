@@ -11,6 +11,12 @@ import ServiceTab from "./ServiceTab";
 import videoHead from "../assets/video/InShot_20241130_193756484.mp4";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
+import Happy1Pic from "../assets/img/client/client-1.png";
+import Happy2Pic from "../assets/img/client/client-2.png";
+import Happy3Pic from "../assets/img/client/client-3.png";
+import Happy4Pic from "../assets/img/client/client-4.png";
+import Happy5Pic from "../assets/img/client/client-5.png";
+import Happy6Pic from "../assets/img/client/client-6.png";
 
 export default function Body() {
   // const [isVisible, setIsVisible] = useState(false);
@@ -47,8 +53,8 @@ export default function Body() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const imageWidth = 270;
-
   const totalImages = informationTeam.length;
+
   const sliderRef = createRef(null);
 
   const [counterState, setCounterState] = useState(false);
@@ -104,12 +110,11 @@ export default function Body() {
     if (sliderRef.current) {
       sliderRef.current.scrollBy({
         left: -sliderRef.current.offsetWidth,
-        behavior: "smooth", // Optional smooth scroll effect
+        behavior: "smooth",
       });
     }
   };
 
-  // Function to scroll right
   const scrollRight = () => {
     if (sliderRef.current) {
       sliderRef.current.scrollBy({
@@ -599,262 +604,6 @@ export default function Body() {
       </section>
 
       <ServiceTab />
-
-      <section className="w-[100%] h-[450px] bg-[#e7e7e7] mt-[70px] flex">
-        <div className="flex w-[40%] pl-[30px] gap-2 items-center h-[100%] justify-center">
-          <div className="flex flex-col rotate-180">
-            <p className="rotate-90 text-[#ffa600]">WHO</p>
-            <p className="rotate-90 mt-6 mb-3 text-[#ffa600]">WE</p>
-            <p className="rotate-90 text-[#ffa600]">ARE</p>
-          </div>
-          <div>
-            <div className="text-[44px] text-neutral-800">What Our</div>
-            <div className="text-[44px] text-neutral-800">
-              <span className="font-bold">Customers</span> Say
-            </div>
-          </div>
-        </div>
-        <div className="w-[60%] h-[100%] flex items-center justify-center flex-col">
-          <div
-            ref={sliderRef}
-            className="flex overflow-hidden w-[670px] h-[300px] bg-orange-400 items-center justify-start"
-          >
-            <div className="card min-w-[100%] h-[100%] bg-[#ffa600] text-white rounded">
-              <div className="w-[100%] h-[25%] flex items-center justify-between px-[50px]">
-                <p className="text-[32px] font-medium ">Quality Support</p>
-                <span className="flex">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="size-6"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="size-6"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="size-6"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </span>
-              </div>
-              <div className="w-[100%] h-[32%] flex items-center justify-center">
-                <p className="text-[14px] w-[570px] text-justify">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Fugiat aperiam eum, corporis tenetur nisi autem in
-                  exercitationem atque maiores. Molestias alias velit maxime
-                  similique, repudiandae ullam ad dolor illo dignissimos.
-                </p>
-              </div>
-              <div className="w-[100%] h-[30%] flex items-center pl-6 gap-8">
-                <div className="w-[74px] h-[85%] rounded-full">
-                  <img
-                    src={client1Pic}
-                    alt=""
-                    className="w-[100%] h-[100%] rounded-full"
-                  />
-                </div>
-                <span>
-                  <p>Joq Martin</p>
-                  <p>Senior Developer</p>
-                </span>
-              </div>
-            </div>
-            <div className="card min-w-[100%] h-[100%] bg-[#ffa600] text-white rounded">
-              <div className="w-[100%] h-[25%] flex items-center justify-between px-[50px]">
-                <p className="text-[32px] font-medium ">Quality Support</p>
-                <span className="flex">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="size-6"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="size-6"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="size-6"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </span>
-              </div>
-              <div className="w-[100%] h-[32%] flex items-center justify-center">
-                <p className="text-[14px] w-[570px] text-justify">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Fugiat aperiam eum, corporis tenetur nisi autem in
-                  exercitationem atque maiores. Molestias alias velit maxime
-                  similique, repudiandae ullam ad dolor illo dignissimos.
-                </p>
-              </div>
-              <div className="w-[100%] h-[30%] flex items-center pl-6 gap-8">
-                <div className="w-[74px] h-[85%] rounded-full">
-                  <img
-                    src={client2Pic}
-                    alt=""
-                    className="w-[100%] h-[100%] rounded-full"
-                  />
-                </div>
-                <span>
-                  <p>Joq Martin</p>
-                  <p>Senior Developer</p>
-                </span>
-              </div>
-            </div>
-            <div className="card min-w-[100%] h-[100%] bg-[#ffa600] text-white rounded">
-              <div className="w-[100%] h-[25%] flex items-center justify-between px-[50px]">
-                <p className="text-[32px] font-medium ">Quality Support</p>
-                <span className="flex">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="size-6"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="size-6"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="size-6"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </span>
-              </div>
-              <div className="w-[100%] h-[32%] flex items-center justify-center">
-                <p className="text-[14px] w-[570px] text-justify">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Fugiat aperiam eum, corporis tenetur nisi autem in
-                  exercitationem atque maiores. Molestias alias velit maxime
-                  similique, repudiandae ullam ad dolor illo dignissimos.
-                </p>
-              </div>
-              <div className="w-[100%] h-[30%] flex items-center pl-6 gap-8">
-                <div className="w-[74px] h-[85%] rounded-full">
-                  <img
-                    src={client3Pic}
-                    alt=""
-                    className="w-[100%] h-[100%] rounded-full"
-                  />
-                </div>
-                <span>
-                  <p>Joq Martin</p>
-                  <p>Senior Developer</p>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className="w-[100%] text-white h-[13%] flex items-center justify-center gap-5">
-            <button
-              onClick={scrollLeft}
-              className=" bg-slate-500 py-1 rounded  active:scale-[0.9]"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="size-6 cursor-pointer"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15.75 19.5 8.25 12l7.5-7.5"
-                />
-              </svg>
-            </button>
-            <button
-              onClick={scrollRight}
-              className=" bg-slate-500 py-1 rounded  active:scale-[0.9]"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="size-6 cursor-pointer"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m8.25 4.5 7.5 7.5-7.5 7.5"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </section>
-
       <section className="mt-[130px] w-[100%] h-[660px] flex flex-col gap-12">
         <div className="w-[100%] h-[20%] flex items-center justify-center flex-col">
           <p className="uppercase text-[20px] text-[#ffa600]">
@@ -1265,6 +1014,261 @@ export default function Body() {
         </div>
       </section>
 
+      <section className="w-[100%] h-[450px] bg-[#e7e7e7] mt-[120px] flex">
+        <div className="flex w-[40%] pl-[30px] gap-2 items-center h-[100%] justify-center">
+          <div className="flex flex-col rotate-180">
+            <p className="rotate-90 text-[#ffa600]">WHO</p>
+            <p className="rotate-90 mt-6 mb-3 text-[#ffa600]">WE</p>
+            <p className="rotate-90 text-[#ffa600]">ARE</p>
+          </div>
+          <div>
+            <div className="text-[44px] text-neutral-800">What Our</div>
+            <div className="text-[44px] text-neutral-800">
+              <span className="font-bold">Customers</span> Say
+            </div>
+          </div>
+        </div>
+        <div className="w-[60%] h-[100%] flex items-center justify-center flex-col">
+          <div
+            ref={sliderRef}
+            className="flex overflow-hidden w-[670px] h-[300px] bg-orange-400 items-center justify-start"
+          >
+            <div className="card min-w-[100%] h-[100%] bg-[#ffa600] text-white rounded">
+              <div className="w-[100%] h-[25%] flex items-center justify-between px-[50px]">
+                <p className="text-[32px] font-medium ">Quality Support</p>
+                <span className="flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="size-6"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="size-6"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="size-6"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div className="w-[100%] h-[32%] flex items-center justify-center">
+                <p className="text-[14px] w-[570px] text-justify">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Fugiat aperiam eum, corporis tenetur nisi autem in
+                  exercitationem atque maiores. Molestias alias velit maxime
+                  similique, repudiandae ullam ad dolor illo dignissimos.
+                </p>
+              </div>
+              <div className="w-[100%] h-[30%] flex items-center pl-6 gap-8">
+                <div className="w-[74px] h-[85%] rounded-full">
+                  <img
+                    src={client1Pic}
+                    alt=""
+                    className="w-[100%] h-[100%] rounded-full"
+                  />
+                </div>
+                <span>
+                  <p>Joq Martin</p>
+                  <p>Senior Developer</p>
+                </span>
+              </div>
+            </div>
+            <div className="card min-w-[100%] h-[100%] bg-[#ffa600] text-white rounded">
+              <div className="w-[100%] h-[25%] flex items-center justify-between px-[50px]">
+                <p className="text-[32px] font-medium ">Quality Support</p>
+                <span className="flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="size-6"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="size-6"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="size-6"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div className="w-[100%] h-[32%] flex items-center justify-center">
+                <p className="text-[14px] w-[570px] text-justify">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Fugiat aperiam eum, corporis tenetur nisi autem in
+                  exercitationem atque maiores. Molestias alias velit maxime
+                  similique, repudiandae ullam ad dolor illo dignissimos.
+                </p>
+              </div>
+              <div className="w-[100%] h-[30%] flex items-center pl-6 gap-8">
+                <div className="w-[74px] h-[85%] rounded-full">
+                  <img
+                    src={client2Pic}
+                    alt=""
+                    className="w-[100%] h-[100%] rounded-full"
+                  />
+                </div>
+                <span>
+                  <p>Joq Martin</p>
+                  <p>Senior Developer</p>
+                </span>
+              </div>
+            </div>
+            <div className="card min-w-[100%] h-[100%] bg-[#ffa600] text-white rounded">
+              <div className="w-[100%] h-[25%] flex items-center justify-between px-[50px]">
+                <p className="text-[32px] font-medium ">Quality Support</p>
+                <span className="flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="size-6"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="size-6"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="size-6"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div className="w-[100%] h-[32%] flex items-center justify-center">
+                <p className="text-[14px] w-[570px] text-justify">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Fugiat aperiam eum, corporis tenetur nisi autem in
+                  exercitationem atque maiores. Molestias alias velit maxime
+                  similique, repudiandae ullam ad dolor illo dignissimos.
+                </p>
+              </div>
+              <div className="w-[100%] h-[30%] flex items-center pl-6 gap-8">
+                <div className="w-[74px] h-[85%] rounded-full">
+                  <img
+                    src={client3Pic}
+                    alt=""
+                    className="w-[100%] h-[100%] rounded-full"
+                  />
+                </div>
+                <span>
+                  <p>Joq Martin</p>
+                  <p>Senior Developer</p>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="w-[100%] text-white h-[13%] flex items-center justify-center gap-5">
+            <button
+              onClick={scrollLeft}
+              className=" bg-slate-500 py-1 rounded  active:scale-[0.9]"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-6 cursor-pointer"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.75 19.5 8.25 12l7.5-7.5"
+                />
+              </svg>
+            </button>
+            <button
+              onClick={scrollRight}
+              className=" bg-slate-500 py-1 rounded  active:scale-[0.9]"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-6 cursor-pointer"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
       <section className="w-[100%] h-[500px] mt-[120px] relative">
         <video
           style={{
@@ -1293,7 +1297,10 @@ export default function Body() {
               </p>
             </div>
           </div>
-          <ScrollTrigger onEnter={()=>setCounterState(true)} onExit={()=>setCounterState(false)}>
+          <ScrollTrigger
+            onEnter={() => setCounterState(true)}
+            onExit={() => setCounterState(false)}
+          >
             <div className="flex items-center w-full h-[55%] justify-center gap-7">
               <div className="group  transition-all duration-[600ms] hover:bg-[#ffa600] w-[280px] h-[180px] bg-[#3b3b3ba6] rounded flex items-center justify-center gap-1 flex-col">
                 <svg
@@ -1305,11 +1312,9 @@ export default function Body() {
                   <path d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.036-.84-1.875-1.875-1.875h-.75ZM9.75 8.625c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-.75a1.875 1.875 0 0 1-1.875-1.875V8.625ZM3 13.125c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v6.75c0 1.035-.84 1.875-1.875 1.875h-.75A1.875 1.875 0 0 1 3 19.875v-6.75Z" />
                 </svg>
                 <p className="text-white text-[32px]">
-                  {
-                    counterState
-                    &&
-                   <CountUp start={0} end={25} duration={2.75}/>
-                  }
+                  {counterState && (
+                    <CountUp start={0} end={25} duration={2.75} />
+                  )}
                 </p>
                 <p className="text-white text-[14px]">Years Experience</p>
               </div>
@@ -1330,11 +1335,9 @@ export default function Body() {
                 </svg>
 
                 <p className="text-white text-[32px]">
-                {
-                    counterState
-                    &&
-                   <CountUp start={0} end={476} duration={2.75}/>
-                  }
+                  {counterState && (
+                    <CountUp start={0} end={476} duration={2.75} />
+                  )}
                 </p>
                 <p className="text-white text-[14px]">Projects Done</p>
               </div>
@@ -1355,11 +1358,9 @@ export default function Body() {
                 </svg>
 
                 <p className="text-white text-[32px]">
-                {
-                    counterState
-                    &&
-                   <CountUp start={0} end={115} duration={2.75}/>
-                  }
+                  {counterState && (
+                    <CountUp start={0} end={115} duration={2.75} />
+                  )}
                 </p>
                 <p className="text-white text-[14px]">Awards Received</p>
               </div>
@@ -1379,16 +1380,173 @@ export default function Body() {
                   />
                 </svg>
                 <p className="text-white text-[32px]">
-                {
-                    counterState
-                    &&
-                   <CountUp start={0} end={276} duration={2.75}/>
-                  }
+                  {counterState && (
+                    <CountUp start={0} end={276} duration={2.75} />
+                  )}
                 </p>
                 <p className="text-white text-[14px]">Happy Clients</p>
               </div>
             </div>
           </ScrollTrigger>
+        </div>
+      </section>
+
+      <section
+        className="w-[100%] h-[350px] mt-20 flex flex-col
+       items-center justify-center gap-5"
+      >
+        <div>
+          <p className="uppercase text-[#ffa600] text-[18px] text-center">
+            Satisfied Clients
+          </p>
+          <p className="text-[38px] flex gap-3">
+            Our Happy <p className="font-bold">Clients</p>
+          </p>
+        </div>
+        <div className="w-[100%] flex flex-col items-center justify-center">
+          <div className="flex w-[90%] h-[150px] items-center overflow-hidden gap-[90px]">
+            <img
+              src={Happy1Pic}
+              alt=""
+              className="w-[200px] h-[40px] object-fill"
+            />
+            <img
+              src={Happy2Pic}
+              alt=""
+              className="w-[200px] h-[40px] object-fill"
+            />
+            <img
+              src={Happy3Pic}
+              alt=""
+              className="w-[250px] h-[40px] object-fill"
+            />
+            <img
+              src={Happy4Pic}
+              alt=""
+              className="w-[200px] h-[40px] object-fill"
+            />
+            <img
+              src={Happy5Pic}
+              alt=""
+              className="w-[200px] h-[40px] object-fill"
+            />
+            <img
+              src={Happy6Pic}
+              alt=""
+              className="w-[200px] h-[40px] object-fill"
+            />
+          </div>
+          <div className="flex gap-4">
+            <button className="bg-gray-400 text-white px-0 py-1 rounded active:scale-[0.9]">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-4"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.75 19.5 8.25 12l7.5-7.5"
+                />
+              </svg>
+            </button>
+            <button className="bg-gray-400 text-white px-0 py-1 rounded active:scale-[0.9]">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-4"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section className="w-[100%] h-[430px] mt-28 flex p-[45px] bg-[#ebebeb] *:text-[#222222]">
+        <div className="w-[45%] h-[100%] flex flex-col items-start justify-center p-4 gap-10">
+          <div className="flex w-[100%] gap-2 items-center ">
+            <div className="flex flex-col rotate-180">
+              <p className="rotate-90 mb-3 text-[#ffa600]">LATEST</p>
+              <p className="rotate-90 mt-6 mb-3 text-[#ffa600]">NEWS</p>
+            </div>
+            <div>
+              <p className="text-[44px] text-[#222222]">Latest</p>
+              <p className="text-[44px] text-[#222222] flex gap-4">
+                From<p className="font-bold">Blog</p>
+              </p>
+            </div>
+          </div>
+          <p className="pl-4">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Repudiandae cum itaque explicabo nulla quaerat id commodi
+            voluptatem.
+          </p>
+          <button className="uppercase ml-4 bg-[#ffa600] hover:bg-[#a17722] duration-200 px-5 py-1 text-white rounded">
+            view all posts
+          </button>
+        </div>
+        <div className="w-[55%] h-[100%] flex items-center justify-center gap-7">
+          <div style={{boxShadow:"0px 0px 15px #0000007f"}} className="w-[320px] bg-white rounded-md h-[260px] flex flex-col justify-center p-3">
+            <p className="w-[100%] h-[20%] text-[18px] flex items-center">
+              Your Post Tilte
+            </p>
+            <p className="w-[100%] h-[25%] text-[14px] mt-3">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum
+              officia minima ad eos. Dsit amet, consectetur adipisicing elit.
+            </p>
+            <button className="w-[100%] h-[10%]
+             text-start mt-3 uppercase hover:text-[#ffa600] duration-200">
+              read more...
+            </button>
+            <div className="w-[100%] h-[2px] mt-8 bg-[#b6b6b6] my-2"></div>
+            <div className="w-[100%] h-[30%] flex items-center justify-between">
+              <span className="w-[60%] h-[100%] flex items-center gap-2">
+                <img
+                  src={client1Pic}
+                  alt=""
+                  className="w-[50px] h-[50px] object-cover rounded-full"
+                />
+                <p className="text-[12px]"> Daniel Watrous</p>
+              </span>
+              <p className="text-[12px]">October 02,2017</p>
+            </div>
+          </div>
+          <div style={{boxShadow:"0px 0px 15px #0000007f"}} className="w-[320px] bg-white rounded-md h-[260px] flex flex-col justify-center p-3">
+            <p className="w-[100%] h-[20%] text-[18px] flex items-center">
+              Your Post Tilte
+            </p>
+            <p className="w-[100%] h-[25%] text-[14px] mt-3">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum
+              officia minima ad eos. Dsit amet, consectetur adipisicing elit.
+            </p>
+            <button className="w-[100%] h-[10%]
+             text-start mt-3 uppercase hover:text-[#ffa600] duration-200">
+              read more...
+            </button>
+            <div className="w-[100%] h-[2px] mt-8 bg-[#b6b6b6] my-2"></div>
+            <div className="w-[100%] h-[30%] flex items-center justify-between">
+              <span className="w-[60%] h-[100%] flex items-center gap-2">
+                <img
+                  src={client2Pic}
+                  alt=""
+                  className="w-[50px] h-[50px] object-cover rounded-full"
+                />
+                <p className="text-[12px]">  Johan Petter</p>
+              </span>
+              <p className="text-[12px]">November 15,2017</p>
+            </div>
+          </div>
         </div>
       </section>
     </>

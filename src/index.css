@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -8,7 +9,7 @@
 }
 body {
   overflow-x: hidden;
-  height: 6700px;
+  height: 8700px;
   transition: ease-in-out;
 }
 
