@@ -1497,7 +1497,10 @@ export default function Body() {
           </button>
         </div>
         <div className="w-[55%] h-[100%] flex items-center justify-center gap-7">
-          <div style={{boxShadow:"0px 0px 15px #0000007f"}} className="w-[320px] bg-white rounded-md h-[260px] flex flex-col justify-center p-3">
+          <div
+            style={{ boxShadow: "0px 0px 15px #0000007f" }}
+            className="w-[320px] bg-white rounded-md h-[260px] flex flex-col justify-center p-3"
+          >
             <p className="w-[100%] h-[20%] text-[18px] flex items-center">
               Your Post Tilte
             </p>
@@ -1505,8 +1508,10 @@ export default function Body() {
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum
               officia minima ad eos. Dsit amet, consectetur adipisicing elit.
             </p>
-            <button className="w-[100%] h-[10%]
-             text-start mt-3 uppercase hover:text-[#ffa600] duration-200">
+            <button
+              className="w-[100%] h-[10%]
+             text-start mt-3 uppercase hover:text-[#ffa600] duration-200"
+            >
               read more...
             </button>
             <div className="w-[100%] h-[2px] mt-8 bg-[#b6b6b6] my-2"></div>
@@ -1522,7 +1527,10 @@ export default function Body() {
               <p className="text-[12px]">October 02,2017</p>
             </div>
           </div>
-          <div style={{boxShadow:"0px 0px 15px #0000007f"}} className="w-[320px] bg-white rounded-md h-[260px] flex flex-col justify-center p-3">
+          <div
+            style={{ boxShadow: "0px 0px 15px #0000007f" }}
+            className="w-[320px] bg-white rounded-md h-[260px] flex flex-col justify-center p-3"
+          >
             <p className="w-[100%] h-[20%] text-[18px] flex items-center">
               Your Post Tilte
             </p>
@@ -1530,8 +1538,10 @@ export default function Body() {
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum
               officia minima ad eos. Dsit amet, consectetur adipisicing elit.
             </p>
-            <button className="w-[100%] h-[10%]
-             text-start mt-3 uppercase hover:text-[#ffa600] duration-200">
+            <button
+              className="w-[100%] h-[10%]
+             text-start mt-3 uppercase hover:text-[#ffa600] duration-200"
+            >
               read more...
             </button>
             <div className="w-[100%] h-[2px] mt-8 bg-[#b6b6b6] my-2"></div>
@@ -1542,13 +1552,15 @@ export default function Body() {
                   alt=""
                   className="w-[50px] h-[50px] object-cover rounded-full"
                 />
-                <p className="text-[12px]">  Johan Petter</p>
+                <p className="text-[12px]"> Johan Petter</p>
               </span>
               <p className="text-[12px]">November 15,2017</p>
             </div>
           </div>
         </div>
       </section>
+
+ 
     </>
   );
 }
