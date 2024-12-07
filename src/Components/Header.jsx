@@ -1,8 +1,5 @@
-import { Box, ListItem, MenuList, Stack, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import videoHead from "../assets/video/InShot_20241130_193756484.mp4";
-import { KeyboardArrowDown } from "@mui/icons-material";
 
 export default function Header() {
   const [changeNav, setChangeNav] = useState(false);
@@ -17,21 +14,19 @@ export default function Header() {
   ];
   const menu = menuItem?.map((e, index) => {
     return (
-      <ListItem
+      <li
+      className="hover:text-[#ffa600]"
         key={index}
-        sx={{
+        style={{
           cursor: "pointer",
           fontWeight: "bold",
           fontFamily: "sans-serif",
           color: `${!changeNav ? "white" : "black"}`,
           fontSize: "14px",
-          "&:hover": {
-            color: "#ffa600",
-          },
         }}
       >
         {e}
-      </ListItem>
+      </li>
     );
   });
 
@@ -60,7 +55,7 @@ export default function Header() {
   }, []);
   return (
     <>
-      <Stack>
+      <section>
         <nav
           style={
             !changeNav
@@ -91,26 +86,26 @@ export default function Header() {
                 }
           }
         >
-          <Box>
-            <Typography
-              variant="h4"
-              sx={{
+          <div>
+            <p
+              style={{
                 color: `${changeNav ? "#bebebe" : "white"}`,
                 cursor: "pointer",
                 fontWeight: "bold",
                 padding: "20px",
+                fontSize: "36px",
               }}
             >
               <span style={{ color: "#ffa600" }}>S</span>O
               <span style={{ color: "#ffa600" }}>L</span>O
-            </Typography>
-          </Box>
-          <Box display={"flex"}>
-            <MenuList sx={{ display: "flex" }}>{menu}</MenuList>
-          </Box>
+            </p>
+          </div>
+          <div display={"flex"}>
+            <ul style={{ display: "flex", gap: "30px" }}>{menu}</ul>
+          </div>
         </nav>
-        <Box
-          sx={{
+        <div
+          style={{
             width: "100vw",
             height: "100vh",
             backgroundColor: "rgba(0,0,0,0.2)",
@@ -131,11 +126,8 @@ export default function Header() {
           >
             <source src={videoHead} />
           </video>
-          <Box
-            position={"absolute"}
-            top={"50%"}
-            left={"50%"}
-            sx={{
+          <div
+            style={{
               transform: "translate(-50%,-50%)",
               backgroundColor: "#00000076",
               width: "100%",
@@ -143,59 +135,46 @@ export default function Header() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              position: "absolute",
+              top: "50%",
+              left: "50%",
             }}
           >
-            <Box
-              display={"flex"}
-              flexDirection={"column"}
-              alignItems={"center"}
-              gap={2}
-            >
-              <Typography
-                variant="h3"
-                fontFamily={"sans-serif"}
-                fontWeight={"bold"}
-                color="white"
-              >
+            <div className="flex flex-col items-center gap-[2px]">
+              <p className="text-[46px] font-serif font-bold text-white">
                 DIGITAL
-              </Typography>
-              <Typography
-                variant="h3"
-                fontFamily={"sans-serif"}
-                fontWeight={"bold"}
-                color="white"
-              >
+              </p>
+              <p className="text-[46px] font-serif font-bold text-white">
                 CREATIVE <span style={{ color: "#ffa600" }}>AGENCY</span>
-              </Typography>
-              <Typography textAlign={"center"} color="white" fontWeight={300}>
+              </p>
+              <p className="text-center text-white font-semibold">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam in
                 nihil minima unde qui nihil minima.
-              </Typography>
-            </Box>
-          </Box>
-          <Box
-            position={"absolute"}
-            bottom={"0%"}
-            left={"50%"}
-            sx={{ transform: "translate(-50%,0%)" }}
+              </p>
+            </div>
+          </div>
+          <div
+            className="absolute bottom-0 left-[50%]"
+            style={{ transform: "translate(-50%,0%)" }}
             onClick={handleClickHead}
           >
-            <KeyboardArrowDown
-              sx={{
-                fontSize: "46px",
-                color: "white",
-                cursor: "pointer",
-                "&:hover": {
-                  color: "#ffa600",
-                },
-                "&:active": {
-                  transform: "scale(0.9)",
-                },
-              }}
-            />
-          </Box>
-        </Box>
-      </Stack>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="size-10 text-white cursor-pointer active:scale-[0.9] hover:text-[#ffa600]"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="m19.5 8.25-7.5 7.5-7.5-7.5"
+              />
+            </svg>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

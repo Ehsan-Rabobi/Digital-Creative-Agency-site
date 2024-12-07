@@ -83,13 +83,11 @@ export default function Body() {
         return false;
       };
 
-      // Update visibility for each element
       setIsVisible1(checkVisibility(ref1));
       setIsVisible2(checkVisibility(ref2));
       setIsVisible3(checkVisibility(ref3));
       setIsVisible4(checkVisibility(ref4));
       setIsVisible5(checkVisibility(ref5));
-      // setIsVisible5(checkVisibility(ref5)); // Add for the last section
     };
 
     window.addEventListener("scroll", handleScroll);
