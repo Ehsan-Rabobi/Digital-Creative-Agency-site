@@ -3,6 +3,17 @@ import videoHead from "../assets/video/InShot_20241130_193756484.mp4";
 
 export default function Header() {
   const [changeNav, setChangeNav] = useState(false);
+  const [subMenu , setSubMenu] = useState(false)
+  const handleSubMenu = () =>{
+    setSubMenu(!subMenu)
+
+    if (subMenu == false) {
+      document.body.style.overflowY = "hidden";
+    } else {
+      document.body.style.overflowY = "auto";
+    }
+  }
+
   const menuItem = [
     "HOME",
     "ABOUT",
@@ -15,7 +26,7 @@ export default function Header() {
   const menu = menuItem?.map((e, index) => {
     return (
       <li
-      className="hover:text-[#ffa600]"
+        className="hover:text-[#ffa600]"
         key={index}
         style={{
           cursor: "pointer",
@@ -55,7 +66,7 @@ export default function Header() {
   }, []);
   return (
     <>
-      <section>
+      <section className="relative">
         <nav
           style={
             !changeNav
@@ -100,8 +111,49 @@ export default function Header() {
               <span style={{ color: "#ffa600" }}>L</span>O
             </p>
           </div>
-          <div display={"flex"}>
-            <ul style={{ display: "flex", gap: "30px" }}>{menu}</ul>
+          <div className="flex items-center">
+            <ul className="md:flex gap-[30px] hidden ">{menu}</ul>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className={`size-9 ${!changeNav ? "text-white" : "text-[#bebebe]"}
+               md:hidden flex cursor-pointer active:scale-[0.9]`}
+              onClick={handleSubMenu}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+            <ul className={`w-[300px] h-[100vh] absolute
+             bg-[#000000da] flex flex-col items-center
+             transition-all duration-500
+              pt-6 ${subMenu ? "left-0 top-0" : "top-0 left-[-400px]"}`}>
+              <span className=" w-full p-5 flex justify-end">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="size-10 text-white cursor-pointer active:scale-[0.9]"
+                  onClick={handleSubMenu}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18 18 6M6 6l12 12"
+                  />
+                </svg>
+              </span>
+              <span className={`mt-10 flex flex-col items-center gap-7`}>
+                {menu}
+              </span>
+            </ul>
           </div>
         </nav>
         <div
