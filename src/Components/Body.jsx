@@ -1,6 +1,6 @@
 import React, { createRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import aboutPic from "../assets/img/about/about.png";
 import informationTeam from "../Utils/images";
 import ourServicesPic from "../assets/img/services/laptop-lamp.png";
@@ -19,32 +19,6 @@ import Happy5Pic from "../assets/img/client/client-5.png";
 import Happy6Pic from "../assets/img/client/client-6.png";
 
 export default function Body() {
-  // const [isVisible, setIsVisible] = useState(false);
-  // const ref = createRef();
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (ref.current) {
-  //       const rect = ref.current.getBoundingClientRect();
-  //       const top = rect.top;
-  //       const height = rect.height;
-  //       const viewportHeight = window.innerHeight;
-
-  //       if (top + height >= 0 && top - viewportHeight <= 0) {
-  //         setIsVisible(true);
-  //       } else {
-  //         setIsVisible(false);
-  //       }
-  //     }
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-
   const [isVisible1, setIsVisible1] = useState(false);
   const [isVisible2, setIsVisible2] = useState(false);
   const [isVisible3, setIsVisible3] = useState(false);
@@ -58,6 +32,8 @@ export default function Body() {
   const sliderRef = createRef(null);
 
   const [counterState, setCounterState] = useState(false);
+
+  const media1020 = useMediaQuery("(max-width:1020px)");
 
   const ref1 = createRef();
   const ref2 = createRef();
@@ -124,13 +100,13 @@ export default function Body() {
 
   return (
     <>
-      <section className="mt-[120px] flex items-center justify-between">
+      <section className="mt-[120px] lg:flex items-center justify-between flex-wrap lg:gap-0">
         <motion.div
           ref={ref1}
           initial={{ x: -250 }}
-          animate={isVisible1 ? { x: 60, opacity: 1 } : { x: -250, opacity: 0 }}
+          animate={isVisible1 ? { x: 0, opacity: 1 } : { x: -250, opacity: 0 }}
           transition={{ duration: 1 }}
-          className="flex w-[30%] pl-[30px] gap-2 items-center min-h-[150px]"
+          className="flex lg:w-[35%] w-[100%] pl-[30px] gap-2 items-center min-h-[150px] justify-center"
         >
           <div className="flex flex-col rotate-180">
             <p className="rotate-90 text-[#ffa600]">WHO</p>
@@ -146,19 +122,20 @@ export default function Body() {
         </motion.div>
 
         <motion.div
-          className="flex flex-col gap-4"
+          className="flex lg:w-[65%] w-[100%]
+           pl-[30px] gap-2 items-center min-h-[150px] justify-center flex-col mt-5 text-center lg:text-justify"
           ref={ref1}
           initial={{ x: -250 }}
-          animate={isVisible1 ? { x: -50, opacity: 1 } : { x: 350, opacity: 0 }}
+          animate={isVisible1 ? { x: 0, opacity: 1 } : { x: 350, opacity: 0 }}
           transition={{ duration: 1 }}
         >
-          <p className="w-[600px] text-[14px] text-neutral-700">
+          <p className="min-w-[400px] md:w-[600px] text-[14px] text-neutral-700 ">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
             aspernatur harum libero et nostrum sequi consequatur, tempore
             accusamus ab esse, voluptatem laudantium voluptas rerum? Laborum id
             ad alias saepe nemo,alias saepe ne consequatur.
           </p>
-          <p className="w-[600px] text-[14px] text-neutral-700">
+          <p className="min-w-[400px] md:w-[600px] text-[14px] text-neutral-700">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
             asperiores ad culpa similique, ratione dicta. Cumque, officia. Velit
             et inventore hic, unde, eum ea! Vitae dolores culpa molestias, in
@@ -177,7 +154,10 @@ export default function Body() {
         />
       </section>
 
-      <section className="w-[100%] overflow-hidden h-[550px] text-neutral-700 bg-neutral-200 mt-[120px] flex justify-evenly items-center p-[30px]">
+      <section
+        className="w-[100%] gap-8 md:gap-4 flex-wrap lg:flex-row overflow-hidden min-h-[550px] text-neutral-700
+       bg-neutral-200 mt-[120px] flex justify-evenly items-center p-[30px]"
+      >
         <motion.div
           className="w-[350px] h-[400px] shadow-[10px_10px_20px_rgba(8,0,0,0.2)]
          bg-white flex flex-col gap-4 items-center justify-center p-[20px] transition-all
@@ -309,129 +289,248 @@ export default function Body() {
         </motion.div>
       </section>
 
-      <section className="w-[100%] h-[340px] mt-[80px]">
-        <div className="flex ">
-          <motion.div
-            ref={ref5}
-            initial={{ x: -250 }}
-            animate={
-              isVisible5 ? { x: 10, opacity: 1 } : { x: -250, opacity: 0 }
-            }
-            transition={{ duration: 1 }}
-            className="w-[45%] h-[100%] "
-          >
-            <div
-              className="w-[100%] h-[60%] flex 
-          pl-[70px] gap-2 items-center min-h-[150px]"
+      <section className="w-[100%] min-h-[340px] mt-[80px] flex flex-col">
+        {media1020 ? (
+          <div className="flex flex-wrap justify-center gap-12 items-center w-[100%] min-h-[320px]">
+            <motion.div
+              ref={ref5}
+              initial={{ x: -250 }}
+              animate={
+                isVisible5 ? { x: 20, opacity: 1 } : { x: -250, opacity: 0 }
+              }
+              transition={{ duration: 1 }}
+              className="w-[720px] h-[100%]"
             >
-              <div className="flex flex-col rotate-180">
-                <p className="rotate-90 text-[#ffa600]">WHO</p>
-                <p className="rotate-90 mt-6 mb-3 text-[#ffa600]">WE</p>
-                <p className="rotate-90 text-[#ffa600]">ARE</p>
+              <div
+                className="w-[100%] h-[60%] flex 
+          pl-[70px] gap-2 items-center min-h-[150px]"
+              >
+                <div className="flex flex-col rotate-180">
+                  <p className="rotate-90 text-[#ffa600]">WHO</p>
+                  <p className="rotate-90 mt-6 mb-3 text-[#ffa600]">WE</p>
+                  <p className="rotate-90 text-[#ffa600]">ARE</p>
+                </div>
+                <div>
+                  <p className="text-[44px] text-neutral-800">Meet Our</p>
+                  <p className="text-[44px] text-neutral-800">
+                    <span className="font-bold">Talented</span> Team
+                  </p>
+                </div>
               </div>
-              <div>
-                <p className="text-[44px] text-neutral-800">Meet Our</p>
-                <p className="text-[44px] text-neutral-800">
-                  <span className="font-bold">Talented</span> Team
+              <div className="w-[100%] h-[40%] pt-[20px] pl-[85px]">
+                <p className="text-[14px]">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Dolore, repellat, eos! Dignissimos expedita totam cum quidem
+                  autem alias dolorum error a quia optio eligendi, amet animi
+                  reprehenderit, quaerat.
                 </p>
               </div>
-            </div>
-            <div className="w-[100%] h-[40%] pt-[20px] pl-[85px]">
-              <p className="text-[14px]">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Dolore, repellat, eos! Dignissimos expedita totam cum quidem
-                autem alias dolorum error a quia optio eligendi, amet animi
-                reprehenderit, quaerat.
-              </p>
-            </div>
-          </motion.div>
-          <motion.div
-            ref={ref5}
-            initial={{ x: 450 }}
-            animate={
-              isVisible5 ? { x: -30, opacity: 1 } : { x: 450, opacity: 0 }
-            }
-            transition={{ duration: 1 }}
-            className="w-[55%] h-[100%] flex items-center justify-evenly flex-col"
-          >
-            <div className="w-[520px] h-[260px] flex items-center justify-start gap-[20px] overflow-hidden relative">
-              {/* {infoTeam} */}
-              <div
-                className="w-[250px] bg-blue-700 items-center gap-[20px] justify-between"
-                style={{
-                  display: "flex",
-                  transform: `translateX(${-currentIndex * imageWidth}px)`,
-                  transition: "transform 0.5s ease-in-out",
-                }}
-              >
-                {informationTeam?.map((e, index) => {
-                  return (
-                    <div
-                      key={index}
-                      className="relative min-w-[250px] h-[260px] overflow-hidden"
-                    >
-                      <img
-                        src={e.img}
-                        alt={e.name}
-                        className="w-[250px] h-[100%] object-cover"
-                      />
-                      <div className="absolute top-0 left-0 flex flex-col items-center justify-center w-[100%] h-[100%] bg-[#000000a8] opacity-[0] hover:opacity-[1] transition-opacity duration-500 ease-in-out">
-                        <p className="text-[#ffa600] font-bold">{e.name}</p>
-                        <p className="text-white">{e.job}</p>
+            </motion.div>
+            <motion.div
+              ref={ref5}
+              initial={{ x: 450 }}
+              animate={
+                isVisible5 ? { x: 15, opacity: 1 } : { x: 450, opacity: 0 }
+              }
+              transition={{ duration: 1 }}
+              className="w-[80%] h-[100%] flex items-center justify-evenly flex-col"
+            >
+              <div className="w-[520px] h-[260px] flex items-center justify-start gap-[20px] overflow-hidden relative">
+                {/* {infoTeam} */}
+                <div
+                  className="w-[250px] items-center gap-[20px] justify-between"
+                  style={{
+                    display: "flex",
+                    transform: `translateX(${-currentIndex * imageWidth}px)`,
+                    transition: "transform 0.5s ease-in-out",
+                  }}
+                >
+                  {informationTeam?.map((e, index) => {
+                    return (
+                      <div
+                        key={index}
+                        className="relative min-w-[250px] h-[260px] overflow-hidden"
+                      >
+                        <img
+                          src={e.img}
+                          alt={e.name}
+                          className="w-[250px] h-[100%] object-cover"
+                        />
+                        <div className="absolute top-0 left-0 flex flex-col items-center justify-center w-[100%] h-[100%] bg-[#000000a8] opacity-[0] hover:opacity-[1] transition-opacity duration-500 ease-in-out">
+                          <p className="text-[#ffa600] font-bold">{e.name}</p>
+                          <p className="text-white">{e.job}</p>
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-            <div className="flex gap-3 mt-3">
-              <button
-                onClick={handleImagePrevTeam}
-                className="py-2 rounded-sm bg-gray-500 text-white active:scale-[0.9]"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="size-5"
+              <div className="flex gap-3 mt-3">
+                <button
+                  onClick={handleImagePrevTeam}
+                  className="py-2 rounded-sm bg-gray-500 text-white active:scale-[0.9]"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M15.75 19.5 8.25 12l7.5-7.5"
-                  />
-                </svg>
-              </button>
-              <button
-                onClick={handleImageNextTeam}
-                className="py-2 rounded-sm bg-gray-500 text-white active:scale-[0.9]"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="size-5"
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="size-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15.75 19.5 8.25 12l7.5-7.5"
+                    />
+                  </svg>
+                </button>
+                <button
+                  onClick={handleImageNextTeam}
+                  className="py-2 rounded-sm bg-gray-500 text-white active:scale-[0.9]"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="m8.25 4.5 7.5 7.5-7.5 7.5"
-                  />
-                </svg>
-              </button>
-            </div>
-          </motion.div>
-        </div>
-        <div className="w-[100%] h-[300px] mt-[30px]">
-          <div className="w-[100%] h-[50%] flex">
-            <div className="h-[100%] w-[50%] flex items-center justify-center flex-col gap-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="size-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        ) : (
+          <div className="flex justify-center gap-12 items-center w-[100%] h-[320px]">
+            <motion.div
+              ref={ref5}
+              initial={{ x: -250 }}
+              animate={
+                isVisible5 ? { x: 10, opacity: 1 } : { x: -250, opacity: 0 }
+              }
+              transition={{ duration: 1 }}
+              className="w-[50%] h-[100%] "
+            >
+              <div
+                className="w-[100%] h-[60%] flex 
+          pl-[70px] gap-2 items-center min-h-[150px]"
+              >
+                <div className="flex flex-col rotate-180">
+                  <p className="rotate-90 text-[#ffa600]">WHO</p>
+                  <p className="rotate-90 mt-6 mb-3 text-[#ffa600]">WE</p>
+                  <p className="rotate-90 text-[#ffa600]">ARE</p>
+                </div>
+                <div>
+                  <p className="text-[44px] text-neutral-800">Meet Our</p>
+                  <p className="text-[44px] text-neutral-800">
+                    <span className="font-bold">Talented</span> Team
+                  </p>
+                </div>
+              </div>
+              <div className="w-[100%] h-[40%] pt-[20px] pl-[85px]">
+                <p className="text-[14px]">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Dolore, repellat, eos! Dignissimos expedita totam cum quidem
+                  autem alias dolorum error a quia optio eligendi, amet animi
+                  reprehenderit, quaerat.
+                </p>
+              </div>
+            </motion.div>
+            <motion.div
+              ref={ref5}
+              initial={{ x: 450 }}
+              animate={
+                isVisible5 ? { x: -30, opacity: 1 } : { x: 450, opacity: 0 }
+              }
+              transition={{ duration: 1 }}
+              className="w-[50%] h-[100%] flex items-center justify-evenly flex-col"
+            >
+              <div className="w-[520px] h-[260px] flex items-center justify-start gap-[20px] overflow-hidden relative">
+                {/* {infoTeam} */}
+                <div
+                  className="w-[250px] items-center gap-[20px] justify-between"
+                  style={{
+                    display: "flex",
+                    transform: `translateX(${-currentIndex * imageWidth}px)`,
+                    transition: "transform 0.5s ease-in-out",
+                  }}
+                >
+                  {informationTeam?.map((e, index) => {
+                    return (
+                      <div
+                        key={index}
+                        className="relative min-w-[250px] h-[260px] overflow-hidden"
+                      >
+                        <img
+                          src={e.img}
+                          alt={e.name}
+                          className="w-[250px] h-[100%] object-cover"
+                        />
+                        <div className="absolute top-0 left-0 flex flex-col items-center justify-center w-[100%] h-[100%] bg-[#000000a8] opacity-[0] hover:opacity-[1] transition-opacity duration-500 ease-in-out">
+                          <p className="text-[#ffa600] font-bold">{e.name}</p>
+                          <p className="text-white">{e.job}</p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+              <div className="flex gap-3 mt-3">
+                <button
+                  onClick={handleImagePrevTeam}
+                  className="py-2 rounded-sm bg-gray-500 text-white active:scale-[0.9]"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="size-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15.75 19.5 8.25 12l7.5-7.5"
+                    />
+                  </svg>
+                </button>
+                <button
+                  onClick={handleImageNextTeam}
+                  className="py-2 rounded-sm bg-gray-500 text-white active:scale-[0.9]"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="size-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+        <div className="w-[100%] min-h-[300px] mt-[30px] flex items-center flex-wrap">
+          <div className={`w-[100%] h-[50%] flex ${media1020 && 'flex-wrap'} justify-evenly`}>
+            <div className="h-[100%] m-5 w-[580px] flex items-start justify-center flex-col gap-3">
               <h2 className="">Web Design</h2>
               <div
-                className="w-[580px] h-[28px] bg-gray-200 rounded-[20px] relative overflow-hidden"
+                className="w-[100%] h-[28px] bg-gray-200 rounded-[20px] relative overflow-hidden"
                 style={{
                   boxShadow: "0px 0px 15px rgba(0,0,0,0.1)",
                   border: "1px solid #8b8b8b16",
@@ -445,10 +544,10 @@ export default function Body() {
                 ></motion.div>
               </div>
             </div>
-            <div className="h-[100%] w-[50%] flex items-center justify-center flex-col gap-3">
+            <div className="h-[100%] m-5 w-[580px] flex items-start justify-center flex-col gap-3">
               <h2 className="justify-start">Photoshop/Illustration</h2>
               <div
-                className="w-[580px] h-[28px] bg-gray-200 rounded-[20px] relative overflow-hidden"
+                className="w-[100%] h-[28px] bg-gray-200 rounded-[20px] relative overflow-hidden"
                 style={{
                   boxShadow: "0px 0px 15px rgba(0,0,0,0.1)",
                   border: "1px solid #8b8b8b16",
@@ -464,11 +563,11 @@ export default function Body() {
               </div>
             </div>
           </div>
-          <div className="w-[100%] h-[50%] flex">
-            <div className="h-[100%] w-[50%] flex items-center justify-center flex-col gap-3">
+          <div className={`w-[100%] h-[50%] flex ${media1020 && 'flex-wrap'} justify-evenly`}>
+            <div className="h-[100%] m-5 w-[580px] flex items-start justify-center flex-col gap-3">
               <h2 className="justify-start">Web Development</h2>
               <div
-                className="w-[580px] h-[28px] bg-gray-200 rounded-[20px] relative overflow-hidden"
+                className="w-[100%] h-[28px] bg-gray-200 rounded-[20px] relative overflow-hidden"
                 style={{
                   boxShadow: "0px 0px 15px rgba(0,0,0,0.1)",
                   border: "1px solid #8b8b8b16",
@@ -482,10 +581,10 @@ export default function Body() {
                 ></motion.div>
               </div>
             </div>
-            <div className="h-[100%] w-[50%] flex items-center justify-center flex-col gap-3">
+            <div className="h-[100%] m-5 w-[580px] flex items-start justify-center flex-col gap-3">
               <h2 className="justify-start">Digital Marketing</h2>
               <div
-                className="w-[580px] h-[28px] bg-gray-200 rounded-[20px] relative overflow-hidden"
+                className="w-[100%] h-[28px] bg-gray-200 rounded-[20px] relative overflow-hidden"
                 style={{
                   boxShadow: "0px 0px 15px rgba(0,0,0,0.1)",
                   border: "1px solid #8b8b8b16",
@@ -504,27 +603,28 @@ export default function Body() {
         </div>
       </section>
 
-      <section className="w-[100%] h-[600px] p-7  mt-[340px] flex flex-col items-center justify-center">
+      <section className="w-[100%] min-h-[600px] p-7  mt-[340px] flex flex-col
+       items-center justify-center">
         <span className="flex flex-col items-center gap-1 w-[100%] h-[20%] justify-center">
           <p className="text-[#ffa600] text-[20px] font-bold">WHAT WE DO</p>
           <p className="text-[46px] font-medium text-[#2b2b2b]">Our Services</p>
         </span>
-        <div className="w-[100%] h-[80%] flex gap-4">
-          <div className="w-[55%] h-[100%] p-6">
+        <div className={`w-[100%] h-[80%] flex ${media1020 && 'flex-wrap'} gap-4 justify-center`}>
+          <div className="w-[800px] h-[100%] p-6 ">
             <img
               src={ourServicesPic}
               alt=""
-              className="w-[100%] h-[100%] object-contain"
+              className="w-[100%] h-[400px] object-contain"
             />
           </div>
-          <div className="w-[40%] h-[100%] flex flex-col gap-6 ">
+          <div className="w-[600px] h-[100%] flex flex-col gap-6">
             <div className="w-[100%] h-[33%]  flex items-center gap-3 justify-center group">
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  className="size-12 group-hover:-translate-x-10 transition-all duration-700 group-hover:text-[#ffa600]"
+                  className="size-9 group-hover:-translate-x-10 transition-all duration-700 group-hover:text-[#ffa600]"
                 >
                   <path
                     fillRule="evenodd"
@@ -533,7 +633,7 @@ export default function Body() {
                   />
                 </svg>
               </span>
-              <span className="flex flex-col gap-2">
+              <span className="flex flex-col">
                 <p className="text-[14px] font-bold text-[#ffa600] transition-all duration-700 group-hover:text-[#1b1b1b]">
                   SERVICES 1
                 </p>
@@ -551,7 +651,7 @@ export default function Body() {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  className="size-12 group-hover:-translate-x-10 transition-all duration-700 group-hover:text-[#ffa600]"
+                  className="size-9 group-hover:-translate-x-10 transition-all duration-700 group-hover:text-[#ffa600]"
                 >
                   <path d="M10.5 18.75a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5h-3Z" />
                   <path
@@ -561,7 +661,7 @@ export default function Body() {
                   />
                 </svg>
               </span>
-              <span className="flex flex-col gap-2">
+              <span className="flex flex-col">
                 <p className="text-[14px] font-bold text-[#ffa600] transition-all duration-700 group-hover:text-[#1b1b1b]">
                   SERVICES 2
                 </p>
@@ -579,13 +679,13 @@ export default function Body() {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  className="size-12 group-hover:-translate-x-10 transition-all duration-700 group-hover:text-[#ffa600]"
+                  className="size-9 group-hover:-translate-x-10 transition-all duration-700 group-hover:text-[#ffa600]"
                 >
                   <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
                   <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
                 </svg>
               </span>
-              <span className="flex flex-col gap-2">
+              <span className="flex flex-col ">
                 <p className="text-[14px] font-bold text-[#ffa600] transition-all duration-700 group-hover:text-[#1b1b1b]">
                   SERVICES 3
                 </p>
@@ -602,6 +702,7 @@ export default function Body() {
       </section>
 
       <ServiceTab />
+
       <section className="mt-[130px] w-[100%] h-[660px] flex flex-col gap-12">
         <div className="w-[100%] h-[20%] flex items-center justify-center flex-col">
           <p className="uppercase text-[20px] text-[#ffa600]">
@@ -1557,8 +1658,6 @@ export default function Body() {
           </div>
         </div>
       </section>
-
- 
     </>
   );
 }
