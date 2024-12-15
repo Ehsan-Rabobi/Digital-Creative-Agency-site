@@ -617,14 +617,15 @@ export default function Body() {
               className="w-[100%] h-[400px] object-contain"
             />
           </div>
-          <div className="w-[600px] h-[100%] flex flex-col gap-6">
-            <div className="w-[100%] h-[33%]  flex items-center gap-3 justify-center group">
-              <span>
+          <div className="w-[600px] h-[100%] flex flex-col gap-6 items-center" >
+            <div className="md:w-[100%] w-[90%] h-[33%] md:flex block items-center gap-3 justify-center group">
+              <span className="">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  className="size-9 group-hover:-translate-x-10 transition-all duration-700 group-hover:text-[#ffa600]"
+                  className="size-9 group-hover:-translate-x-10 transition-all 
+                  duration-700 group-hover:text-[#ffa600] m-auto"
                 >
                   <path
                     fillRule="evenodd"
@@ -633,25 +634,25 @@ export default function Body() {
                   />
                 </svg>
               </span>
-              <span className="flex flex-col">
+              <span className="flex flex-col items-center md:items-start">
                 <p className="text-[14px] font-bold text-[#ffa600] transition-all duration-700 group-hover:text-[#1b1b1b]">
                   SERVICES 1
                 </p>
                 <p className="text-[22px] text-[#1b1b1b]">Web Design</p>
-                <p className="text-[#1b1b1b] w-[450px]">
+                <p className="text-[#1b1b1b] w-[100%] md:text-justify text-center">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Iusto tempora aut, nesciunt rem excepturi itaque laborum odio,
                   id explicabo.
                 </p>
               </span>
             </div>
-            <div className="w-[100%] h-[33%]  flex items-center gap-3 justify-center group">
+            <div className="md:w-[100%] w-[90%] h-[33%] md:flex block items-center gap-3 justify-center group">
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  className="size-9 group-hover:-translate-x-10 transition-all duration-700 group-hover:text-[#ffa600]"
+                  className="size-9 m-auto group-hover:-translate-x-10 transition-all duration-700 group-hover:text-[#ffa600]"
                 >
                   <path d="M10.5 18.75a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5h-3Z" />
                   <path
@@ -661,36 +662,36 @@ export default function Body() {
                   />
                 </svg>
               </span>
-              <span className="flex flex-col">
+              <span className="flex flex-col items-center md:items-start">
                 <p className="text-[14px] font-bold text-[#ffa600] transition-all duration-700 group-hover:text-[#1b1b1b]">
                   SERVICES 2
                 </p>
                 <p className="text-[22px] text-[#1b1b1b]">Web Development</p>
-                <p className="text-[#1b1b1b] w-[450px]">
+                <p className="text-[#1b1b1b] w-[100%] md:text-justify text-center">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Iusto tempora aut, nesciunt rem excepturi itaque laborum odio,
                   id explicabo.
                 </p>
               </span>
             </div>
-            <div className="w-[100%] h-[33%] flex items-center gap-3 justify-center group">
+            <div className="md:w-[100%] w-[90%] h-[33%] md:flex block items-center gap-3 justify-center group">
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  className="size-9 group-hover:-translate-x-10 transition-all duration-700 group-hover:text-[#ffa600]"
+                  className="size-9 m-auto group-hover:-translate-x-10 transition-all duration-700 group-hover:text-[#ffa600]"
                 >
                   <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
                   <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
                 </svg>
               </span>
-              <span className="flex flex-col ">
+              <span className="flex flex-col items-center md:items-start">
                 <p className="text-[14px] font-bold text-[#ffa600] transition-all duration-700 group-hover:text-[#1b1b1b]">
                   SERVICES 3
                 </p>
                 <p className="text-[22px] text-[#1b1b1b]">Digital Marketing</p>
-                <p className="text-[#1b1b1b] w-[450px]">
+                <p className="text-[#1b1b1b] w-[100%] md:text-justify text-center">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Iusto tempora aut, nesciunt rem excepturi itaque laborum odio,
                   id explicabo.

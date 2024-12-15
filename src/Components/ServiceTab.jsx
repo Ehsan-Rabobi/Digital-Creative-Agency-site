@@ -24,7 +24,8 @@ export default function ServiceTab() {
 
   return (
     <div className="slider relative w-[100%] h-[650px] my-[40px] bg-[#d1d1d1]  mt-[150px]">
-      <div className="titles absolute top-0 left-0 w-[100%] h-[15%]  flex justify-center p-[32px] gap-[70px]">
+      <div className="titles absolute top-0 left-0 w-[100%] h-[15%]
+       flex justify-center p-[32px] gap-[50px]">
         {data.map((item, index) => (
           <div
             key={item.id}
@@ -36,15 +37,17 @@ export default function ServiceTab() {
             }`}
             onClick={() => handleTitleClick(index)}
           >
-            {item.title.slice(0, 10)}
+            <p>
+            {item.title.slice(0, 7)}
+            </p>
           </div>
         ))}
       </div>
 
-      <div className="photos absolute top-[90px] left-0 w-[100%] h-[85%] flex items-center justify-center">
+      <div className="photos absolute top-[90px] bg-purple-900 left-0 w-[100%] h-[85%] flex items-center justify-center">
         {data.map((item, index) => (
           <>
-            <div className="w-[80%] h-[450px] absolute overflow-hidden rounded-md">
+            <div className="w-[80%] bg-green-700 h-[450px] absolute overflow-hidden rounded-md">
               <div
                 key={item.id}
                 className={`photo ${activeIndex === index ? "active" : ""}`}
@@ -60,7 +63,7 @@ export default function ServiceTab() {
                 className={`${
                   activeIndex === index
                     ? "absolute right-0 bg-white w-[50%] h-[100%]"
-                    : "bg-green-400 "
+                    : " "
                 }`}
                 style={{
                   zIndex: "100",
