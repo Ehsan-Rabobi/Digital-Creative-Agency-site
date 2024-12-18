@@ -704,14 +704,14 @@ export default function Body() {
 
       <ServiceTab />
 
-      <section className="mt-[130px] w-[100%] h-[660px] flex flex-col gap-12">
+      <section className="mt-[130px] w-[100%] min-h-[660px] flex flex-col gap-12">
         <div className="w-[100%] h-[20%] flex items-center justify-center flex-col">
           <p className="uppercase text-[20px] text-[#ffa600]">
             Lovely Customers
           </p>
           <p className="text-[48px] text-[#1d1d1d]">Our Pricing</p>
         </div>
-        <div className="flex justify-center items-center w-[100%] h-[80%] gap-8">
+        <div className="flex justify-center items-center w-[100%] h-[80%] gap-8 flex-wrap">
           <div
             className="w-[370px] h-[510px] bg-white p-[10px] rounded hover:bg-[#ffa600] 
           transition-all duration-[600ms] group"
@@ -1114,8 +1114,9 @@ export default function Body() {
         </div>
       </section>
 
-      <section className="w-[100%] h-[450px] bg-[#e7e7e7] mt-[120px] flex">
-        <div className="flex w-[40%] pl-[30px] gap-2 items-center h-[100%] justify-center">
+      <section className="w-[100%] min-h-[450px] bg-[#e7e7e7] mt-[120px]
+       flex lg:flex-row flex-col justify-around gap-2 items-center">
+        <div className="flex p-[10px] max-w-[500px] pl-[30px] gap-2 items-center h-[100%] justify-center">
           <div className="flex flex-col rotate-180">
             <p className="rotate-90 text-[#ffa600]">WHO</p>
             <p className="rotate-90 mt-6 mb-3 text-[#ffa600]">WE</p>
@@ -1128,10 +1129,10 @@ export default function Body() {
             </div>
           </div>
         </div>
-        <div className="w-[60%] h-[100%] flex items-center justify-center flex-col">
+        <div className="w-full lg:w-[53%] h-[100%] flex items-center justify-center flex-col p-3">
           <div
             ref={sliderRef}
-            className="flex overflow-hidden w-[670px] h-[300px] bg-orange-400 items-center justify-start"
+            className="flex overflow-hidden w-[100%]  h-[300px] bg-orange-400 items-center justify-start"
           >
             <div className="card min-w-[100%] h-[100%] bg-[#ffa600] text-white rounded">
               <div className="w-[100%] h-[25%] flex items-center justify-between px-[50px]">
@@ -1176,7 +1177,7 @@ export default function Body() {
                 </span>
               </div>
               <div className="w-[100%] h-[32%] flex items-center justify-center">
-                <p className="text-[14px] w-[570px] text-justify">
+                <p className="text-[14px] w-[570px] text-justify px-3">
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                   Fugiat aperiam eum, corporis tenetur nisi autem in
                   exercitationem atque maiores. Molestias alias velit maxime
@@ -1240,7 +1241,7 @@ export default function Body() {
                 </span>
               </div>
               <div className="w-[100%] h-[32%] flex items-center justify-center">
-                <p className="text-[14px] w-[570px] text-justify">
+                <p className="text-[14px] w-[570px] text-justify px-3">
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                   Fugiat aperiam eum, corporis tenetur nisi autem in
                   exercitationem atque maiores. Molestias alias velit maxime
@@ -1304,7 +1305,7 @@ export default function Body() {
                 </span>
               </div>
               <div className="w-[100%] h-[32%] flex items-center justify-center">
-                <p className="text-[14px] w-[570px] text-justify">
+                <p className="text-[14px] w-[570px] text-justify px-3">
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                   Fugiat aperiam eum, corporis tenetur nisi autem in
                   exercitationem atque maiores. Molestias alias velit maxime
@@ -1492,7 +1493,7 @@ export default function Body() {
       </section>
 
       <section
-        className="w-[100%] h-[350px] mt-20 flex flex-col
+        className="w-[100%] min-h-[350px] mt-20 flex flex-col
        items-center justify-center gap-5"
       >
         <div>
@@ -1504,7 +1505,7 @@ export default function Body() {
           </p>
         </div>
         <div className="w-[100%] flex flex-col items-center justify-center">
-          <div className="flex w-[90%] h-[150px] items-center overflow-hidden gap-[90px]">
+          <div className="flex w-[90%] min-h-[150px] items-center overflow-hidden gap-[90px] flex-wrap justify-center">
             <img
               src={Happy1Pic}
               alt=""
@@ -1525,7 +1526,7 @@ export default function Body() {
               alt=""
               className="w-[200px] h-[40px] object-fill"
             />
-            <img
+            {/* <img
               src={Happy5Pic}
               alt=""
               className="w-[200px] h-[40px] object-fill"
@@ -1534,9 +1535,9 @@ export default function Body() {
               src={Happy6Pic}
               alt=""
               className="w-[200px] h-[40px] object-fill"
-            />
+            /> */}
           </div>
-          <div className="flex gap-4">
+          <div className="flex gap-4 mt-5">
             <button className="bg-gray-400 text-white px-0 py-1 rounded active:scale-[0.9]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1573,8 +1574,9 @@ export default function Body() {
         </div>
       </section>
 
-      <section className="w-[100%] h-[430px] mt-28 flex p-[45px] bg-[#ebebeb] *:text-[#222222]">
-        <div className="w-[45%] h-[100%] flex flex-col items-start justify-center p-4 gap-10">
+      <section className="w-[100%] min-h-[430px] mt-28 flex p-[45px]
+       bg-[#ebebeb] *:text-[#222222] flex-wrap lg:flex-nowrap items-center justify-around gap9">
+        <div className="max-w-[550px] h-[100%] flex flex-col items-start justify-center p-4 gap-10">
           <div className="flex w-[100%] gap-2 items-center ">
             <div className="flex flex-col rotate-180">
               <p className="rotate-90 mb-3 text-[#ffa600]">LATEST</p>
@@ -1596,10 +1598,10 @@ export default function Body() {
             view all posts
           </button>
         </div>
-        <div className="w-[55%] h-[100%] flex items-center justify-center gap-7">
+        <div className="min-w-[55%] flex-wrap lg:flex-nowrap h-[100%] flex items-center justify-center gap-7">
           <div
             style={{ boxShadow: "0px 0px 15px #0000007f" }}
-            className="w-[320px] bg-white rounded-md h-[260px] flex flex-col justify-center p-3"
+            className="sm:w-[320px] w-[850px] bg-white rounded-md min-h-[260px] flex flex-col justify-center p-3"
           >
             <p className="w-[100%] h-[20%] text-[18px] flex items-center">
               Your Post Tilte
@@ -1629,7 +1631,7 @@ export default function Body() {
           </div>
           <div
             style={{ boxShadow: "0px 0px 15px #0000007f" }}
-            className="w-[320px] bg-white rounded-md h-[260px] flex flex-col justify-center p-3"
+            className="sm:w-[320px] w-[850px] bg-white rounded-md min-h-[260px] flex flex-col justify-center p-3"
           >
             <p className="w-[100%] h-[20%] text-[18px] flex items-center">
               Your Post Tilte

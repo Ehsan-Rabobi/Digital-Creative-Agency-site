@@ -3,8 +3,8 @@ import React from "react";
 export default function Footer() {
   return (
     <>
-      <section className="w-[100%] h-[500px]  mt-24 flex p-[60px]">
-        <div className="w-[50%] h-[100%] flex flex-col items-center justify-center p-4 gap-2">
+      <section className="w-[100%] min-h-[500px] bg-blue-600 md:flex-nowrap mt-24 flex p-[30px] flex-wrap justify-around">
+        <div className="w-[650px] h-[100%] bg-red-400 flex flex-col items-center justify-center p-4 gap-2">
           <div className="flex w-[100%] gap-2 items-center">
             <div className="flex flex-col rotate-180 h-[120px] justify-center gap-3">
               <p className="rotate-90 mb-3 text-[#ffa600]">WHO</p>
@@ -131,7 +131,7 @@ export default function Footer() {
           <span></span>
         </div>
 
-        <div className="w-[50%] h-[100%] flex items-center justify-center p-4">
+        <div className="w-[600px] h-[100%] bg-lime-400 flex items-center justify-center p-4">
           <div
             className="w-[570px] h-[430px] bg-white p-4 flex flex-col gap-4 rounded"
             style={{ boxShadow: "0px 0px 10px #75757584" }}

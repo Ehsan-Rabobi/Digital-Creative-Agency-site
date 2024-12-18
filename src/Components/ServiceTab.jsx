@@ -44,10 +44,10 @@ export default function ServiceTab() {
         ))}
       </div>
 
-      <div className="photos absolute top-[90px] bg-purple-900 left-0 w-[100%] h-[85%] flex items-center justify-center">
+      <div className="photos absolute top-[90px] left-0 w-[100%] h-[85%] flex items-center justify-center">
         {data.map((item, index) => (
           <>
-            <div className="w-[80%] bg-green-700 h-[450px] absolute overflow-hidden rounded-md">
+            <div className="w-[80%] h-[450px] absolute overflow-hidden rounded-md">
               <div
                 key={item.id}
                 className={`photo ${activeIndex === index ? "active" : ""}`}
@@ -55,7 +55,7 @@ export default function ServiceTab() {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-[100%] h-[100%] object-fill z-20"
+                  className="w-[100%] max-h-[100%] object-fill z-20"
                 />
               </div>
               <div
@@ -78,9 +78,9 @@ export default function ServiceTab() {
                 {activeIndex === index && (
                   <>
                     <p className="text-[38px] text-slate-600">0{item.id}</p>
-                    <p className="text-[38px]">{item.title.slice(0, 20)}.</p>
-                    <p className="w-[500px]">
-                      {item.description.slice(0, 155)}
+                    <p className="text-[2rem]">{item.title.slice(0, 20)}.</p>
+                    <p className="max-w-[500px]">
+                      {item.description.slice(0, 95)}
                     </p>
                     <button className="uppercase bg-[#ffa600] py-[5px] px-[15px] rounded text-white
                      hover:text-[#ffa600] hover:bg-[#d4d4d4] transition-all font-serif">
